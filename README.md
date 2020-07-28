@@ -24,10 +24,15 @@ Git コマンドをまだ考えながら打っている方のための Git コ�
 ☑ リモートリポジトリ  
 ☑ ベアリポジトリ  
 ☑ git clone  
-☑ git branch ☑ git checkout  
-☑ git add ☑ git commit ☑ git push  
-☑ git status ☑ git log  
-☑ git stash ☑ git reset(--soft, --hard )  
+☑ git branch  
+☑ git checkout(-b)  
+☑ git add  
+☑ git commit -m  
+☑ git push(-u, --set-upstream)  
+☑ git status  
+☑ git log  
+☑ git stash  
+☑ git reset(--soft, --hard)  
 ☑ git merge  
 ☑ git fetch ☑ git pull  
 ☑ HEAD^  
