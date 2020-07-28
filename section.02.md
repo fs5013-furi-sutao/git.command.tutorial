@@ -138,7 +138,7 @@ cat ./README.md
 master が「猫」でマージされる前にブランチを切ったので、まだ内容が「人間」となっていることを確認する
 
 ```console
-sed -i 's/人間/犬' ./README.md
+sed -i 's/人間/犬/' ./README.md
 cat ./README.md
 ```
 
