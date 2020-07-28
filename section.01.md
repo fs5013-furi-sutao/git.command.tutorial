@@ -82,6 +82,7 @@ cat ./.git/config
 
 出力：
 ＝＝＝＝＝
+```console
 [core]
         repositoryformatversion = 0
         filemode = false
@@ -95,6 +96,7 @@ cat ./.git/config
 [remote "origin"]
         url = https://fs5013-furi-sutao:パスワード@github.com/GitHubアカウント名/git.test.dir.git
         fetch = +refs/heads/*:refs/remotes/origin/*
+```
 ＝＝＝＝＝
 
 `git config` に登録した `user` と `remote` が反映されていることを確認する
