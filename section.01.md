@@ -46,6 +46,13 @@ cd ./git.test.dir/
 echo -e '# git.test.dir  \n  \n私は人間です.  ' > ./README.md
 cat ./README.md
 ```
+実行結果：
+```
+# git.test.dir
+
+私は人間です.
+
+```
 
 ファイル README.md が作成され、テキストが書き込まれていることを確認する
 
