@@ -7,12 +7,16 @@ Win キー を押して、`gitbash` と入力して Enter
 
 Git Bash を起動
 
-```pwd```
+```console
+pwd
+```
 
 現在地がユーザのディレクトリ直下なので、C: ドライブ直下に移動する
 
-```cd c: ```
-```pwd```
+```console
+cd c: 
+pwd
+```
 
 C: ドライブ直下に移動できたことを確認する
 
