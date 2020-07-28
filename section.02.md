@@ -199,7 +199,9 @@ VSCode で README.md ファイルを見てみる
 
 では今回は、開発の要件上、後で変更した「犬」が最終的な変更とすることにする
 
-そこで VSCode 上では、コンフリクト部分に出現している Accept Current Change ボタンを押下して、最新の変更を採用し、ファイルを保存する
+そこで VSCode 上で、コンフリクト部分に出現している Accept Current Change ボタンを押下して、最新の変更を採用し、ファイルを保存する
+
+![VSCode 上でコンフリクト部分に出現している Accept Current Change ボタン](./image/watch_conflict_with_vscode.png)  
 
 ```console
 git add ./README.md
