@@ -45,7 +45,7 @@ git push -u origin feature/change-read-me-cat
 
 ```console
 cat ./README.md
-echo -e '# git.test.dir  \n  \n私は猫です.  ' > ./README.md
+sed s/人間/猫/ ./README.md
 cat ./README.md
 ```
 
