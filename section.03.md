@@ -13,6 +13,12 @@ git branch
 
 ```console
 cat ./README.md
+git pull
+cat ./README.md
+```
+まだ、リモートのマージが反映されておらず「猫」となっているので、pull を実行することで「犬」になったことを確認する。
+
+```console
 sed -i 's/犬/猿/' ./README.md
 cat ./README.md
 ```
