@@ -7,18 +7,20 @@
 git branch
 ```
 
-`* master` と表示され現在、master ブランチにいることが分かる
+`* master` と表示され現在、master ブランチにいることが分かる。
 
-ここで master ブランチの保護設定をしておく
+ここで master ブランチの保護設定をしておく。
 
-コンフリクトや不用意なバグの混入を防ぐために、実際の開発では master ブランチへのコミットを禁止している
+コンフリクトや不用意なバグの混入を防ぐために、実際の開発では master ブランチへのコミットを禁止している。
 
-ただし、禁止ルールというだけでは、間違えて master にコミットしてしまうことは防げないので、以下の手順で master ブランチにコミットできないように、master ブランチの保護設定をしておく
+ただし、禁止ルールというだけでは、間違えて master にコミットしてしまうことは防げないので、以下の手順で master ブランチにコミットできないように、master ブランチの保護設定をしておく。
 
-GitHub の Settings -> Branches -> Branch protection rules で Add rule ボタンを押下
+GitHub の Settings -> Branches -> Branch protection rules で Add rule ボタンを押下する。
 
-Branch name pattern に master と入力し、Create ボタンを押下することで、master ブランチを保護することができる
-ここからローカルに戻る
+Branch name pattern に master と入力し、Create ボタンを押下することで、master ブランチを保護することができる。
+
+つまり以降、master ブランチへのコミットは不可能となる。  
+ここからローカルに戻る。 
 
 ```console
 git checkout -b feature/change-read-me-dog 
