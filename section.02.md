@@ -24,7 +24,7 @@ Branch name pattern に master と入力し、Create ボタンを押下するこ
 
 ```console
 git checkout -b feature/change-read-me-dog 
-git barnch
+git branch
 ```
 
 新規ブランチ `feature/change-read-me-dog` を切って、そのブランチに移動したことが分かる
