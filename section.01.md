@@ -117,5 +117,5 @@ git push -u origin master
 GitHub の該当リポジトリをブラウザで見て、push が反映されたことを確認する。
 
 section.02 につづく・・・  
-[section.02: コンフリクトの解決](section.02.md)  
+[section.02: master ブランチの保護とコンフリクトの解決](section.02.md)  
   
