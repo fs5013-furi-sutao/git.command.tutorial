@@ -43,7 +43,7 @@ C: ドライブ直下に `git.test.dir` フォルダが出来ていることを�
 
 ```console
 cd ./git.test.dir/
-echo -e '# git.test.dir  \n  \n私は人間です.  ' >> ./README.md
+echo -e '# git.test.dir  \n  \n私は人間です.  ' > ./README.md
 cat ./README.md
 ```
 
