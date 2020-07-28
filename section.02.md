@@ -38,6 +38,7 @@ git branch
 
 ```console
 git checkout -b feature/change-read-me-cat
+git branch
 ```
 
 新規ブランチ `feature/change-read-me-cat` を切って、そのブランチに移動したことが分かるここから `feature/change-read-me-cat` ブランチ上で作業をする 
@@ -46,7 +47,6 @@ git checkout -b feature/change-read-me-cat
 
 ```console
 git push -u origin feature/change-read-me-cat 
-git branch
 ```
 
 `feature/change-read-me-cat` ブランチをリモートに反映できたことを GitHub で確認する
