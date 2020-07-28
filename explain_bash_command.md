@@ -39,12 +39,20 @@ lsコマンドは「list segments」の略で、ファイルやディレクト�
 ls -la
 ```
 > total 9
-> drwxr-xr-x 1 natsuki 197121    0  6月 18 21:47 ./
-> drwxr-xr-x 1 natsuki 197121    0  6月 20 10:10 ../
-> -rwxr-xr-x 1 natsuki 197121 2335  6月 18 21:47 code*
-> -rw-r--r-- 1 natsuki 197121  132  6月 18 21:47 code.cmd
+> drwxr-xr-x 1 natsuki 197121    0  6月 18 21:47 ./  
+> drwxr-xr-x 1 natsuki 197121    0  6月 20 10:10 ../  
+> -rwxr-xr-x 1 natsuki 197121 2335  6月 18 21:47 code*  
+> -rw-r--r-- 1 natsuki 197121  132  6月 18 21:47 code.cmd  
 
 ls -lで実行すると、格納されているファイル名だけではなく、状態も同時に表示される。表示内容には、ファイルの権限（パーミッション）やオーナー名、更新日時などが含まれる
+
+## mkdir  
+"make directory" の略。ディレクトリを作成するコマンド
+
+`git.test.dir` ディレクトリを作成する：
+```console
+mkdir ./git.test.dir
+```
 
 ## find 
 ファイルやディレクトリを検索するコマンド
