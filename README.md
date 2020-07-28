@@ -30,7 +30,7 @@ Git コマンドをまだ考えながら打っている方のための Git コ�
 ☑ git commit -m  
 ☑ git push(-u, --set-upstream)  
 ☑ git status  
-☑ git log  
+☑ git log(--oneline)  
 ☑ git stash  
 ☑ git reset(--soft, --hard)  
 ☑ git merge  
