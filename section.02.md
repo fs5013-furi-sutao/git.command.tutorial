@@ -167,9 +167,20 @@ git branch
 ```console
 git merge master 
 ```
+実行結果：
+```
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
+Automatic merge failed; fix conflicts and then commit the result.
+```
+日本語訳：
+```
+README.md を自動マージ 
+内容がコンフリクトしています： README.md のマージで競合
+自動マージに失敗しました。コンフリクトを修正してから結果をコミットしてください。
+```
 
-master ブランチを `feature/change-read-me-dog` ブランチにマージしたが、
-もちろん内容が競合（コンフリクト）した状態になる
+master ブランチの内容を `feature/change-read-me-dog` ブランチにマージした（取り込んだ）が、もちろん内容が競合（コンフリクト）した状態になる
 
 VSCode で README.md ファイルを見てみる
 
