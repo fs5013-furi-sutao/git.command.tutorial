@@ -5,6 +5,8 @@
 
 ```console
 git branch
+git checkout master
+git branch
 ```
 
 `feature/change-read-me-dog` ブランチにいるので、master にスイッチする
