@@ -10,7 +10,7 @@ section.01 ～ section.03 までシナリオが一連の流れになっていま
 [ローカルリポジトリ・リモートリポジトリの作成からプッシュまで](./section.01.md)  
   
 ## section.02  
-[コンフリクトの解決](./section.02.md)  
+[master ブランチの保護とコンフリクトの解決](./section.02.md)  
   
 ## section.03  
 [コミットの解決とスタッシュ](./section.03.md)  
