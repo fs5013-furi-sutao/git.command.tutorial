@@ -17,7 +17,7 @@ git branch
 
 GitHub の Settings -> Branches -> Branch protection rules で Add rule ボタンを押下する。
 
-Branch name pattern に master と入力し、Create ボタンを押下することで、master ブランチを保護することができる。
+Branch name pattern に master と入力。Include administrators（管理者を含む）のチェックボックスにはチェックを入れ、Create ボタンを押下することで、すべての push から master ブランチを保護することができる。
 
 つまり以降、master ブランチへのコミットは不可能となる。  
 ここからローカルに戻る。 
