@@ -101,6 +101,7 @@ cat ./README.md
 カレントディレクトリの README.md ファイル内文字列中の「人間」を「猫」に置き換える：
 ```console
 sed -i 's/人間/猫/' ./README.md
+cat ./README.md
 ```
 実行結果：
 ```
@@ -109,4 +110,4 @@ sed -i 's/人間/猫/' ./README.md
 私は猫です.
 ```
 
--i	--in-place	ファイルを直接編集する
+`-i` オプション(`--in-place`)は、ファイルを直接編集する
