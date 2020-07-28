@@ -24,17 +24,18 @@ Git コマンドをまだ考えながら打っている方のための Git コ�
 ☑ リモートリポジトリ  
 ☑ ベアリポジトリ  
 ☑ git clone  
-- git checkout  
-- git branch 
-- git add
-- git commit 
-- git status  
-- git log  
-- git fetch  
-- git merge  
-- git stash  
-- git pull  
-- git push  
-- コンフリクト  
-- プルリクエスト（GitHub）
-- マージリクエスト（GitLab）
+☑ git checkout  
+☑ git branch 
+☑ git add
+☑ git commit 
+☑ git status  
+☑ git log  
+☑ git fetch  
+☑ git merge  
+☑ git stash  
+☑ git pull  
+☑ git push  
+☑ コンフリクト  
+☑ プルリクエスト（GitHub）  
+☑ マージリクエスト（GitLab）  
+  
