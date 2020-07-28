@@ -45,7 +45,7 @@ git push -u origin feature/change-read-me-cat
 
 ```console
 cat ./README.md
-sed s/人間/猫/ ./README.md
+sed -i 's/人間/猫/' ./README.md
 cat ./README.md
 ```
 
@@ -127,11 +127,10 @@ git branch -a
 cat ./README.md
 ```
 
-master が「猫」でマージされる前にブランチを切ったので、
-まだ内容が「人間」となっていることを確認する
+master が「猫」でマージされる前にブランチを切ったので、まだ内容が「人間」となっていることを確認する
 
 ```console
-echo -e '# git.test.dir  \n  \n私は犬です.  ' > ./README.md
+sed -i 's/人間/犬' ./README.md
 cat ./README.md
 ```
 
