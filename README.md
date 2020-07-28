@@ -24,6 +24,7 @@ Git コマンドをまだ考えながら打っている方のための Git コ�
 ☑ リモートリポジトリ  
 ☑ ベアリポジトリ  
 ☑ git clone  
+☑ git   
 ☑ git branch  
 ☑ git checkout(-b)  
 ☑ git add  
