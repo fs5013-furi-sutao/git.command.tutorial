@@ -84,7 +84,7 @@ git commit -m 'first commit'
 |Public: |true|
 |Initialize this repository with a README: |none|
 
-本来は SSH キーでの認証が良いが、ここでは説明を簡略化するために、
+**セキュリティ上、本来は SSH キーでの認証がベストだが、**ここでは説明を簡略化するために、
 リモートリポジトリの URI にユーザ情報を含めて、git config に登録する
 
 ```console
