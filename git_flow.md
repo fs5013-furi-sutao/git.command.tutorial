@@ -2,7 +2,7 @@
 
 git-flow とは、Vincent Driessen が、ブログに書いた [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/) というブランチモデルをもとにした、git を拡張したプラグインのことです。
 
-ここでは、git-flow ブランチモデルのイメージと各ブランチの役割の概要を押さえておきます。
+ここではプラグインの説明はせず、git-flow ブランチモデルのイメージと各ブランチの役割の概要のみを押さえておきます。
 
 ![Git Flow ブランチモデル](./image/git_flow.png)  
 
