@@ -34,7 +34,8 @@ Git コマンドをまだ考えながら打っている方のための Git コ�
 ☑ git stash  
 ☑ git reset(--soft, --hard)  
 ☑ git merge  
-☑ git fetch ☑ git pull  
+☑ git fetch  
+☑ git pull  
 ☑ HEAD^  
 ☑ コンフリクト  
 ☑ プルリクエスト（GitHub）  
