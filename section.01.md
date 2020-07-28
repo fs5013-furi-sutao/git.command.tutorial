@@ -21,14 +21,15 @@ pwd
 C: ドライブ直下に移動できたことを確認する
 
 ```console
-ls -a
+ls -la
+find -maxdepth 1 -type d -name '[a-g]*'
 ```
 
 C: ドライブ直下のディレクトリ一覧を見て、今から作成するディレクトリ名とかぶる名前のフォルダがないことを確認する
 
 ```console
 mkdir ./git.test.dir
-ls -la
+find -maxdepth 1 -type d -name 'git*'
 ```
 
 C: ドライブ直下に `git.test.dir` フォルダが出来ていることを確認する
