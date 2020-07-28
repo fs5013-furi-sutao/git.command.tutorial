@@ -10,11 +10,12 @@ git branch
 `feature/change-read-me-dog` ブランチにいるので、master にスイッチする
 
 ```console
-echo -e '# git.test.dir  \n  \n私は猿です.  ' > ./README.md
+cat ./README.md
+sed -i 's/犬/猿/' ./README.md
 cat ./README.md
 ```
 
-「猿」に書き変わったことを確認する
+「犬」から「猿」に書き変わったことを確認する
 
 ```console
 git add .
@@ -126,3 +127,4 @@ git log --oneline
   
 以上。  
   
+一連の git コマンドのチュートリアルは終わり。
