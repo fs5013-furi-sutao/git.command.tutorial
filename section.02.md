@@ -46,6 +46,7 @@ git checkout -b feature/change-read-me-cat
 
 ```console
 git push -u origin feature/change-read-me-cat 
+git branch
 ```
 
 `feature/change-read-me-cat` ブランチをリモートに反映できたことを GitHub で確認する
