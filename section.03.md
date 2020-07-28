@@ -80,7 +80,7 @@ git stash list
 
 スタッシュが保存されていることが分かる
 
-```
+```console
 cat ./README.md
 git checkout -b feature/change-read-me-ape
 git push -u origin feature/change-read-me-ape
