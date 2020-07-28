@@ -8,23 +8,23 @@ git-flow とは、[Vincent Driessen](https://github.com/nvie) が、ブログに
 
 ## 各ブランチの役割  
 
-### master:  
+### master: メインブランチ 
 
 プロダクトとしてリリースするためのブランチ。リリースしたらタグ付けする。
 
-### develop:  
+### develop: 開発 
 
 開発ブランチ。コードが安定し、リリース準備ができたら master へマージする。リリース前はこのブランチが最新バージョンとなる。
 
-### feature branches:  
+### feature branches: 追加機能 
 
 機能の追加。 develop から分岐し、 develop にマージする。
 
-### hotfixes:  
+### hotfixes: 迅速な提供を最優先とする修正プログラム 
 
 リリース後のクリティカルなバグフィックスなど、 現在のプロダクトのバージョンに対する変更用。 master から分岐し、 master にマージし、タグをつける。次に develop にマージする。
 
-### release branches:  
+### release branches: リリースブランチ 
 
 プロダクトリリースの準備。 機能の追加やマイナーなバグフィックスとは独立させることで、 リリース時に含めるコードを綺麗な状態に保つ（機能追加中で未使用のコードなどを含まないようにする）ことができる。 
 
