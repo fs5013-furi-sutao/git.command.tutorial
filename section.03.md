@@ -102,6 +102,7 @@ git stash apply stash@{0}
 このコマンドでスタックの一番上のスタッシュが新規ブランチ上に戻される
 
 ```console
+git branch
 cat ./README.md
 ```
 
