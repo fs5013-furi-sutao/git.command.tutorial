@@ -21,7 +21,7 @@ pwd
 C: ドライブ直下に移動できたことを確認する
 
 ```console
-ls -la
+ls -a
 find -maxdepth 1 -type d -name '[a-g]*'
 ```
 
@@ -29,7 +29,7 @@ C: ドライブ直下のディレクトリ一覧を見て、今から作成す�
 
 ```console
 mkdir ./git.test.dir
-find -maxdepth 1 -type d -name 'git*'
+find -maxdepth 1 -type d -name '[a-g]*'
 ```
 
 C: ドライブ直下に `git.test.dir` フォルダが出来ていることを確認する
