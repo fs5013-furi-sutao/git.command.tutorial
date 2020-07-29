@@ -140,9 +140,9 @@ Finish your review ボタンを押下し、Comment のラジオボタンが選�
 ```
 origin
   
-master o --- o ------- o
+master A-----B---------D
               \       /
-               o --- o  
+               B''---C  
                feature/change-read-me-cat  
 ```
   
@@ -173,11 +173,11 @@ cat ./README.md
 ```
 local
                feature/change-read-me-dog  
-               o  
+               B'  
               /  
-master o --- o ------- o
+master A-----B---------D
               \       /
-               o --- o  
+               B''---C  
                feature/change-read-me-cat  
 ```
 
@@ -204,11 +204,11 @@ git branch -a
 ```
 origin
                feature/change-read-me-dog  
-               o  
+               B'  
               /  
-master o --- o ------- o
+master A-----B---------D
               \       /
-               o --- o  
+               B''---C  
                feature/change-read-me-cat  
 ```
 
