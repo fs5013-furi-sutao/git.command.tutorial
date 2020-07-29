@@ -34,9 +34,9 @@ git branch
 ```
 local
                feature/change-read-me-dog  
-               o  
+               B'  
               /  
-master o --- o  
+master A-----B  
 ```
 
 新規ブランチ `feature/change-read-me-dog` を切って、そのブランチに移動したことが分かる。
@@ -56,11 +56,11 @@ git branch
 ```
 local
                feature/change-read-me-dog  
-               o  
+               B'  
               /  
-master o --- o  
+master A-----B  
               \  
-               o  
+               B''  
                feature/change-read-me-cat  
 ```
 
@@ -75,9 +75,9 @@ git push -u origin feature/change-read-me-cat
 ```
 origin
   
-master o --- o  
+master A-----B  
               \  
-               o  
+               B''  
                feature/change-read-me-cat  
 ```
   
@@ -100,19 +100,19 @@ git push
 ```
 local
                feature/change-read-me-dog  
-               o  
+               B'  
               /  
-master o --- o  
+master A-----B  
               \  
-               o --- o  
+               B''---C  
                feature/change-read-me-cat  
 ```
 ```
 origin
   
-master o --- o  
+master A-----B  
               \  
-               o --- o  
+               B''---C  
                feature/change-read-me-cat  
 ```
 
