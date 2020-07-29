@@ -1,7 +1,10 @@
 # section.02: master ブランチの保護とコンフリクトの解決
 
-※チュートリアル中で使われている git コマンド以外のコマンドの説明は以下のファイルを参照  
-[チュートリアル中で使った bash コマンドの説明](./explain_bash_command.md)
+**NOTE:**  
+> コマンドの実行環境は Windows 10 を想定
+> 
+> ※チュートリアル中で使われている git コマンド以外のコマンドの説明は以下のファイルを参照  
+> [チュートリアル中で使った bash コマンドの説明](./explain_bash_command.md)  
 
 ```console
 git branch
