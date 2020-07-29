@@ -30,6 +30,13 @@ Branch name pattern に master と入力。Include administrators（管理者を
 git checkout -b feature/change-read-me-dog 
 git branch
 ```
+イメージ：
+```
+               feature/change-read-me-dog  
+               o  
+              /  
+master o --- o  
+```
 
 新規ブランチ `feature/change-read-me-dog` を切って、そのブランチに移動したことが分かる。
 
