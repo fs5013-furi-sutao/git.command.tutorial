@@ -51,9 +51,12 @@ mkdir ./git.test.dir
 find -maxdepth 1 -type d -name '[a-g]*'
 ```
 
-
-
+続いて今、作成した `git.test.dir` フォルダ内に移動したい。
 `cd ./git` までタイピングし、Tab キーを押すことで  `./git.test.dir` のパスが補完されることを確認する。
+
+```console
+cd ./git.test.dir/
+```
 
 以降は、タイピングミスを防ぐこと、作業効率性、この 2 つを目的として、なるべく Tab キーでの補完機能を利用するように心掛ける。
   
@@ -61,7 +64,6 @@ find -maxdepth 1 -type d -name '[a-g]*'
   
 ### 新規ファイル README.md の作成  
 ```console
-cd ./git.test.dir/
 echo -e '# git.test.dir  \n  \n私は人間です.  ' > ./README.md
 cat ./README.md
 ```
