@@ -5,7 +5,8 @@
 > 
 > ※チュートリアル中で使われている git コマンド以外のコマンドの説明は以下のファイルを参照  
 > [チュートリアル中で使った bash コマンドの説明](./explain_bash_command.md)  
-
+  
+## master ブランチを保護する  
 ```console
 git branch
 ```
