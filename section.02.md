@@ -236,15 +236,27 @@ git push
 ```
 origin
                feature/change-read-me-dog  
-               o  -------- o   
-              /             
-master o --- o ------- o 
+               B'----------E   
+              /  
+master A-----B---------D
               \       /
-               o --- o  
+               B''---C  
                feature/change-read-me-cat  
 ```
   
 GitHub のリポジトリを見て、「Compare & pull request」のボタンが表示されていることを確認するここで「Compare & pull request」ボタンを押下。
+  
+状況イメージ：
+```
+origin
+               feature/change-read-me-dog  
+               B'----------E   
+              /             \
+master A-----B---------D---- Can’t automatically merge. 
+              \       /
+               B''---C  
+               feature/change-read-me-cat  
+```
 
 Can’t automatically merge. となっていて、自動マージができないことを確認する。
 
@@ -272,6 +284,17 @@ Automatic merge failed; fix conflicts and then commit the result.
 README.md を自動マージ 
 内容がコンフリクトしています： README.md のマージで競合
 自動マージに失敗しました。コンフリクトを修正してから結果をコミットしてください。
+```
+実行結果イメージ：
+```
+origin
+               feature/change-read-me-dog  
+               B'----------E   
+              /             \
+master A-----B---------D-----? Conflict!
+              \       /
+               B''---C  
+               feature/change-read-me-cat  
 ```
 
 master ブランチの内容を `feature/change-read-me-dog` ブランチにマージした（取り込んだ）が、もちろん内容が競合（コンフリクト）した状態になる。
