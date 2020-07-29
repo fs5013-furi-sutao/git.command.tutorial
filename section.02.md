@@ -287,13 +287,13 @@ README.md を自動マージ
 ```
 実行結果イメージ：
 ```
-origin
+local
                feature/change-read-me-dog  
-               B'----------E   
-              /             \
-master A-----B---------D-----? Conflict!
-              \       /
-               B''---C  
+               B'----E----@ Can’t automatically merge.  
+              /          /   
+master A-----B----------D  
+              \        /
+               B''----C  
                feature/change-read-me-cat  
 ```
 
@@ -330,6 +330,17 @@ vi エディタが開くので、コンフリクトのコミットメッセー�
 ```console
 git push
 ```
+実行結果イメージ：
+```
+origin:local
+               feature/change-read-me-dog  
+               B'----E----F 
+              /          /   
+master A-----B----------D  
+              \        /
+               B''----C  
+               feature/change-read-me-cat  
+```
 
 これで GitHub を見て、コミットが Able to merge になったことを確認する。  
   
@@ -338,6 +349,18 @@ git push
 変更内容が「犬」であることを確認し、Merge pull request ボタンを押下。  
   
 マージコメント欄に「Feature/change read me dog」が自動入力されたことを確認し、Confirm merge ボタンを押下する。  
+  
+実行結果イメージ：
+```
+origin
+               feature/change-read-me-dog  
+               B'----E----F 
+              /          / \  
+master A-----B----------D---G  
+              \        /
+               B''----C  
+               feature/change-read-me-cat  
+```
   
 リポジトリのトップページを見て、README.md の内容が「犬」に変わっていることを確認する。  
 ここからローカルに戻る。  
