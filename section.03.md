@@ -186,6 +186,19 @@ git checkout master
 git pull
 git log --oneline
 ```
+実行結果イメージ：
+```
+origin:local
+               feature/change-read-me-dog  
+               B'----E----F 
+              /          / \  
+master A-----B----------D---G------I  
+              \        /     \    /
+               B''----C       \  /
+  feature/change-read-me-cat   \/
+                                H  
+                              feature/change-read-me-ape
+```
 
 今回は git status を使わなかったが適宜、git status で状態を確認しながらコミットやブランチの操作を行っていく。  
 
