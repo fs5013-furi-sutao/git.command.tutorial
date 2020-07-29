@@ -51,8 +51,18 @@ git branch
 git checkout -b feature/change-read-me-cat
 git branch
 ```
+イメージ：
+```
+               feature/change-read-me-dog  
+               o  
+              /  
+master o --- o  
+              \  
+               o  
+               feature/change-read-me-cat  
+```
 
-新規ブランチ `feature/change-read-me-cat` を切って、そのブランチに移動したことが分かるここから `feature/change-read-me-cat` ブランチ上で作業をする。 
+さらに、新規ブランチ `feature/change-read-me-cat` を切って、そのブランチに移動したことが分かる。ここから `feature/change-read-me-cat` ブランチ上で作業をする。 
 
 `git push -u origin feature/change-read-me-c` まで入力し、Tab キーを押すことで、Git Bash ではブランチ名も補完が効くことを確認する。
 
