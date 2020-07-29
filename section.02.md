@@ -30,7 +30,7 @@ Branch name pattern に master と入力。Include administrators（管理者を
 git checkout -b feature/change-read-me-dog 
 git branch
 ```
-イメージ：
+実行結果イメージ：
 ```
 local
                feature/change-read-me-dog  
@@ -52,7 +52,7 @@ git branch
 git checkout -b feature/change-read-me-cat
 git branch
 ```
-イメージ：
+実行結果イメージ：
 ```
 local
                feature/change-read-me-dog  
@@ -71,7 +71,7 @@ master o --- o
 ```console
 git push -u origin feature/change-read-me-cat 
 ```
-イメージ：
+実行結果イメージ：
 ```
 origin
   
@@ -96,11 +96,20 @@ git add .
 git commit -m 'change the human to the cat in README.md'
 git push
 ```
-イメージ：
+実行結果イメージ：
 ```
+local
                feature/change-read-me-dog  
                o  
               /  
+master o --- o  
+              \  
+               o --- o  
+               feature/change-read-me-cat  
+```
+```
+origin
+  
 master o --- o  
               \  
                o --- o  
