@@ -115,7 +115,18 @@ Finish your review ボタンを押下し、Comment のラジオボタンが選�
 マージコメント欄に「change the human to the cat in README.md」が自動入力されたことを確認し、Confirm merge ボタンを押下する。
 
 これでリモートでのマージが完了。
-
+  
+イメージ：
+```
+               feature/change-read-me-dog  
+               o  
+              /  
+master o --- o ------- o
+              \       /
+               o --- o  
+               feature/change-read-me-cat  
+```
+  
 上部の Pull requests タブを押すと、`0 Open 1 Closed` となっていることを確認し、`1 Closed` をクリックする。
 
 ここにプルリクエストの履歴が残っていることを確認する。
