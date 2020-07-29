@@ -85,6 +85,16 @@ git add .
 git commit -m 'change the human to the cat in README.md'
 git push
 ```
+イメージ：
+```
+               feature/change-read-me-dog  
+               o  
+              /  
+master o --- o  
+              \  
+               o --- o  
+               feature/change-read-me-cat  
+```
 
 GitHub のリポジトリを見て、「Compare & pull request」のボタンが表示されていることを確認する。
 
