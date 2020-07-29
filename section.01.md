@@ -77,7 +77,7 @@ git はメールアドレスによりコミットした個人を特定してい�
 
 開発では、複数アカウントで git 管理することがあり得るので、グローバルに `git config` の設定をせずに、ローカルリポジトリごとの範囲で設定するようにする。
   
-### ローカル config 設定してコミット  
+### ローカル config にユーザ設定をしてコミット  
 ```console
 git config --local user.name fs5013-furi-sutao
 git config --local user.email fs5013.furi.sutao@gmail.com
