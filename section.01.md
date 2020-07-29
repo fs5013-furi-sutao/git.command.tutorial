@@ -9,7 +9,7 @@
 ## Git Bash の起動  
 Win キー を押して、`gitbash` と入力して Enter キーを押下する。  
   
-** NOTE: **  
+**NOTE:**  
 > コマンド実行には Powershell を使っても良いが、今回はファイルへの文字列の書き込みを行うため、文字コードが UTF-8 での出力が容易にできない Powershell を使用しないことにする
 
 Git Bash が起動する。  
@@ -45,7 +45,10 @@ C: ドライブ直下に `git.test.dir` フォルダが出来ていることを�
 `cd ./git` までタイピングし、Tab キーを押すことで  `./git.test.dir` のパスが補完されることを確認する。
 
 以降は、タイピングミスを防ぐこと、作業効率性、この 2 つを目的として、なるべく Tab キーでの補完機能を利用するように心掛ける。
-
+  
+## master ブランチへのコミット、プッシュまで  
+  
+### 新規ファイル README.md の作成  
 ```console
 cd ./git.test.dir/
 echo -e '# git.test.dir  \n  \n私は人間です.  ' > ./README.md
@@ -60,7 +63,8 @@ cat ./README.md
 ```
 
 ファイル README.md が作成され、テキストが書き込まれていることを確認する。
-
+  
+### ローカルリポジトリの初期化 / ステージング / コミット失敗  
 ```console
 git init
 git add .
@@ -72,13 +76,15 @@ git commit -m 'first commit'
 git はメールアドレスで、コミットした個人を特定しているので、`git config` に自分が誰かを設定する必要がある。
 
 開発では、複数アカウントで git 管理することがあり得るので、グローバルに `git config` の設定をせずに、ローカルリポジトリごとの範囲で設定するようにする。
-
+  
+### ローカル config 設定してコミット  
 ```console
 git config --local user.name fs5013-furi-sutao
 git config --local user.email fs5013.furi.sutao@gmail.com
 git commit -m 'first commit'
 ```
-
+  
+### GitHub リポジトリの作成  
 ここで GitHub に以下の設定でリモートリポジトリを作成する。
 
 |項目|設定内容|
@@ -88,6 +94,7 @@ git commit -m 'first commit'
 |Public: |true|
 |Initialize this repository with a README: |none|
 
+### config ファイルへのリモート origin の追加  
 **セキュリティ上、本来は SSH キーでの認証がベストだが、** ここでは説明を簡略化するために、リモートリポジトリの URI にユーザ情報を含めて、git config に登録する。
 
 ```console
@@ -115,7 +122,8 @@ cat ./.git/config
 ＝＝＝＝＝
 
 `git config` に登録した `user` と `remote` が反映されていることを確認する。
-
+  
+### リモートリポジトリへのプッシュ  
 ```console
 git push -u origin master
 ```
