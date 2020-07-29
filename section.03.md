@@ -16,6 +16,18 @@ cat ./README.md
 git pull
 cat ./README.md
 ```
+実行結果イメージ：
+```
+origin:local
+               feature/change-read-me-dog  
+               B'----E----F 
+              /          / \  
+master A-----B----------D---G  
+              \        /
+               B''----C  
+               feature/change-read-me-cat  
+```
+  
 まだ、リモートのマージが反映されておらず「猫」となっているので、pull を実行することで「犬」になったことを確認する。
 
 ```console
@@ -29,6 +41,27 @@ cat ./README.md
 git add .
 git commit -m 'change the dog to the ape in README.md'
 git push
+```
+実行結果イメージ：
+```
+local
+               feature/change-read-me-dog  
+               B'----E----F 
+              /          / \  
+master A-----B----------D---G----H 
+              \        /
+               B''----C  
+               feature/change-read-me-cat  
+```
+```
+origin
+               feature/change-read-me-dog  
+               B'----E----F 
+              /          / \  
+master A-----B----------D---G----@ Reject!  
+              \        /
+               B''----C  
+               feature/change-read-me-cat  
 ```
 
 禁止されたローカルの master からリモートの master への push だったので、GitHub で行ったブランチの保護設定により、push が失敗したことを確認する。
@@ -82,6 +115,19 @@ cat ./README.md
 ```console
 git stash save
 ```
+実行結果イメージ：
+```
+local
+               feature/change-read-me-dog  
+               B'----E----F 
+              /          / \  
+master A-----B----------D---G  
+              \        /
+               B''----C  
+               feature/change-read-me-cat  
+               
+stash@{0} ->H
+```
 
 これで変更が退避されたので、退避リストを確認する。
 
@@ -96,6 +142,19 @@ cat ./README.md
 git checkout -b feature/change-read-me-ape
 git push -u origin feature/change-read-me-ape
 git stash apply stash@{0}
+```
+実行結果イメージ：
+```
+local
+               feature/change-read-me-dog  
+               B'----E----F 
+              /          / \  
+master A-----B----------D---G  
+              \        /     \
+               B''----C       \
+  feature/change-read-me-cat   \
+                                H  
+stash@{0} ->                   feature/change-read-me-ape
 ```
 
 このコマンドでスタックの一番上のスタッシュが新規ブランチ上に戻される。
