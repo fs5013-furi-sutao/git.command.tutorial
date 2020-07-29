@@ -120,7 +120,7 @@ GitHub のリポジトリを見て、「Compare & pull request」のボタンが
 
 ここで「Compare & pull request」ボタンを押下する。
 
-差分が「人間」と「猫」部分であることを確認、マージ内容が「base:master <- compare:feature/change-read-me-cat」でAble to merge（マージ可能）となっていることを確認する。
+差分が「人間」と「猫」部分であることを確認、マージ内容が「base:master <- compare:feature/change-read-me-cat」で Able to merge（マージ可能）となっていることを確認する。
 
 コメント欄に「猫にしたので、コードレビューをお願いします」と入力し、Create pull request ボタンを押下する。
 
@@ -200,6 +200,17 @@ git branch -a
 git push -u origin feature/change-read-me-dog  
 git branch -a
 ```
+実行結果イメージ：
+```
+origin
+               feature/change-read-me-dog  
+               o  
+              /  
+master o --- o ------- o
+              \       /
+               o --- o  
+               feature/change-read-me-cat  
+```
 
 ブランチがリモートに反映できたことを確認する。
 
@@ -221,7 +232,18 @@ git add .
 git commit -m 'change the human to the dog in README.md'
 git push
 ```
-
+実行結果イメージ：
+```
+origin
+               feature/change-read-me-dog  
+               o  -------- o   
+              /             
+master o --- o ------- o 
+              \       /
+               o --- o  
+               feature/change-read-me-cat  
+```
+  
 GitHub のリポジトリを見て、「Compare & pull request」のボタンが表示されていることを確認するここで「Compare & pull request」ボタンを押下。
 
 Can’t automatically merge. となっていて、自動マージができないことを確認する。
