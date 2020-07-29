@@ -226,5 +226,5 @@ git push
 ここからローカルに戻る。  
   
 最終章 section.03 につづく・・・  
-[section.03: コミットの解決とスタッシュ](section.03.md)  
+[section.03: 誤ったコミットの解決とスタッシュ ](section.03.md)  
   
