@@ -289,7 +289,7 @@ README.md を自動マージ
 ```
 local
                feature/change-read-me-dog  
-               B'----E----@ Can’t automatically merge.  
+               B'----E----@ CONFLICT.Automatic merge failed.  
               /          /   
 master A-----B----------D  
               \        /
