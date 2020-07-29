@@ -32,6 +32,7 @@ git branch
 ```
 イメージ：
 ```
+local
                feature/change-read-me-dog  
                o  
               /  
@@ -53,6 +54,7 @@ git branch
 ```
 イメージ：
 ```
+local
                feature/change-read-me-dog  
                o  
               /  
@@ -69,7 +71,16 @@ master o --- o
 ```console
 git push -u origin feature/change-read-me-cat 
 ```
-
+イメージ：
+```
+origin
+  
+master o --- o  
+              \  
+               o  
+               feature/change-read-me-cat  
+```
+  
 `feature/change-read-me-cat` ブランチをリモートに反映できたことを GitHub で確認する。
 
 ```console
