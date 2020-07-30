@@ -129,7 +129,12 @@ git commit -m 'first commit'
 **セキュリティ上、本来は SSH キーでの認証がベストだが、** ここでは説明を簡略化するために、リモートリポジトリの URI にユーザ情報を含めて、git config に登録する。
 
 ```console
-git remote add origin https://GitHubユーザ名:パスワード@github.com/GitHubアカウント名/git.test.dir.git
+git remote add origin https://<GitHubユーザ名>:<パスワード>@github.com/<GitHubアカウント名>/<リポジトリ名>.git
+cat ./.git/config
+```
+例）：
+```console
+git remote add origin https://fs5013-furi-sutao:D#8h5k!b@github.com/fs5013-furi-sutao/git.test.dir.git
 cat ./.git/config
 ```
 
