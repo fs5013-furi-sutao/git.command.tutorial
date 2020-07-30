@@ -24,6 +24,8 @@ GitHub の Settings -> Branches -> Branch protection rules で Add rule ボタ�
 Branch name pattern に master と入力。Include administrators（管理者を含む）のチェックボックスにはチェックを入れ、Create ボタンを押下することで、すべての push から master ブランチを保護することができる。
 
 つまり以降、master ブランチへのコミットは不可能となる。  
+
+## 新規 dog ブランチの作成
 ここからローカルに戻る。 
 
 ```console
