@@ -93,7 +93,12 @@ master A-----B
 ```console
 git push -u origin feature/change-read-me-cat 
 ```
-実行結果イメージ：
+
+このブランチを反映するコマンド、`git push -u origin <指定ブランチ>` は、上流に origin （origin は、デフォルトのリモートリポジトリのこと）を指定して、ブランチを反映する。
+
+※ push の `-u` オプションは、`--set-upstream` オプションの略で、git pull する際の上流を指定するオプション 
+
+状況イメージ：
 ```
 origin
   
