@@ -217,6 +217,12 @@ cat ./README.md
 git pull
 cat ./README.md
 ```
+実行結果：
+```
+# git.test.dir
+
+私は猫です.
+```
 状況イメージ：
 ```
 local
