@@ -62,11 +62,19 @@ git branch
 
 現在地が master ブランチに戻ったことが分かる。
 
+## 新規 cat ブランチの作成
 ```console
 git checkout -b feature/change-read-me-cat
 git branch
 ```
-実行結果イメージ：
+実行結果：
+```console
+* feature/change-read-me-cat
+  feature/change-read-me-dog
+  master
+```
+
+状況イメージ：
 ```
 local
                feature/change-read-me-dog  
@@ -78,7 +86,7 @@ master A-----B
                feature/change-read-me-cat  
 ```
 
-さらに、新規ブランチ `feature/change-read-me-cat` を切って、そのブランチに移動したことが分かる。ここから `feature/change-read-me-cat` ブランチ上で作業をする。 
+さらに、新規ブランチ `feature/change-read-me-cat` を切って、そのブランチに移動したことが分かる。ここからは `feature/change-read-me-cat` ブランチ上で作業をする。 
 
 `git push -u origin feature/change-read-me-c` まで入力し、Tab キーを押すことで、Git Bash ではブランチ名も補完が効くことを確認する。
 
