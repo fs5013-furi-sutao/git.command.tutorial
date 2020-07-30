@@ -92,6 +92,11 @@ git はメールアドレスによりコミットした個人を特定してい�
   
 ### ローカル config にユーザ設定
 ```console
+git config --local user.name <ユーザ名>
+git config --local user.email <メールアドレス>
+```
+例）：
+```console
 git config --local user.name fs5013-furi-sutao
 git config --local user.email fs5013.furi.sutao@gmail.com
 ```
