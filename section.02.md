@@ -32,7 +32,13 @@ Branch name pattern に master と入力。Include administrators（管理者を
 git checkout -b feature/change-read-me-dog 
 git branch
 ```
-実行結果イメージ：
+実行結果：
+```console
+* feature/change-read-me-dog
+  master
+```
+
+状況イメージ：
 ```
 local
                feature/change-read-me-dog  
@@ -42,10 +48,16 @@ master A-----B
 ```
 
 新規ブランチ `feature/change-read-me-dog` を切って、そのブランチに移動したことが分かる。
+master ブランチに戻る。
 
 ```console
 git checkout master
 git branch
+```
+実行結果：
+```console
+  feature/change-read-me-dog
+* master
 ```
 
 現在地が master ブランチに戻ったことが分かる。
