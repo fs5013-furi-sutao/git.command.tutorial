@@ -138,6 +138,8 @@ git remote add origin https://fs5013-furi-sutao:D#8h5k!b@github.com/fs5013-furi-
 cat ./.git/config
 ```
 
+origin というのが、デフォルトのリモートリポジトリの名前になる。origin 
+
 出力：
 ＝＝＝＝＝
 ```console
@@ -152,7 +154,7 @@ cat ./.git/config
         name = fs5013-furi-sutao
         email = fs5013.furi.sutao@gmail.com
 [remote "origin"]
-        url = https://fs5013-furi-sutao:パスワード@github.com/GitHubアカウント名/git.test.dir.git
+        url = https://<ユーザ名>:<パスワード>@github.com/<GitHubアカウント名>/git.test.dir.git
         fetch = +refs/heads/*:refs/remotes/origin/*
 ```
 ＝＝＝＝＝
