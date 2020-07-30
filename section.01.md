@@ -99,15 +99,14 @@ git config --local user.email fs5013.furi.sutao@gmail.com
 git を使い慣れてきたら、git のログを見やすくする設定もしておきましょう。
 
 git のログを見やすくするには、長い記述のオプションを打つ必要が出てきてしまいます。
-毎回長いオプションを打たなくても、短いコマンドで済むように、コマンドにエイリアス（別名）を登録する機能が git にはあります。
-
+毎回長いオプションを打たなくても、短いコマンドで済むように、コマンドにエイリアス（別名）を登録する機能が git にある。
 [config ファイルにエイリアスを登録する方法](./how_register_arias_to_config.md)
 
+### master ブランチへの初回コミット
+
+では改めて、初回コミットを行う。
+
 ```console
-git config --local alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
-```
-
-
 git commit -m 'first commit'
 ```
   
