@@ -182,14 +182,32 @@ master A-----B----D
 
 リポジトリのトップページを見て、README.md の内容が「猫」に変わっていることを確認するここからローカルに戻る。
 
+## マージ結果を master に pull する  
+
 ```console
 git branch
+```
+実行結果：
+```
+* feature/change-read-me-cat
+  feature/change-read-me-dog
+  master
 ```
 
 `feature/change-read-me-cat` ブランチにいることを確認する。
 
 ```console
 git checkout master 
+git branch
+```
+実行結果：
+```
+  feature/change-read-me-cat
+  feature/change-read-me-dog
+* master
+```
+
+```console
 cat ./README.md
 ```
 
@@ -199,29 +217,45 @@ cat ./README.md
 git pull
 cat ./README.md
 ```
-実行結果イメージ：
+状況イメージ：
 ```
 local
                feature/change-read-me-dog  
                B'  
               /  
-master A-----B---------D
-              \       /
-               B''---C  
+master A-----B----D
+              \  /
+               C  
                feature/change-read-me-cat  
 ```
 
 pull によって、リモートでマージされた内容がローカルリポジトリに反映され、README.md の内容が「猫」になっていることを確認する。
 
+## dog ブランチをリモートに登録
+
 ```console
 git checkout feature/change-read-me-dog
 git branch
+```
+実行結果：
+```
+  feature/change-read-me-cat
+* feature/change-read-me-dog
+  master
 ```
 
 `feature/change-read-me-dog` ブランチに移動したことを確認する。
 
 ```console
 git branch -a
+```
+実行結果：
+```
+  feature/change-read-me-cat
+* feature/change-read-me-dog
+  master
+  remotes/origin/feature/change-read-me-cat
+  remotes/origin/master
 ```
 
 リモートにはまだ、`feature/change-read-me-dog` が反映されていないことを確認する。
@@ -230,18 +264,29 @@ git branch -a
 git push -u origin feature/change-read-me-dog  
 git branch -a
 ```
-実行結果イメージ：
+実行結果：
+```
+  feature/change-read-me-cat
+* feature/change-read-me-dog
+  master
+  remotes/origin/feature/change-read-me-cat
+  remotes/origin/feature/change-read-me-dog
+  remotes/origin/master
+```
+
+状況イメージ：
 ```
 origin
                feature/change-read-me-dog  
                B'  
               /  
-master A-----B---------D
-              \       /
-               B''---C  
+master A-----B----D
+              \  /
+               C  
                feature/change-read-me-cat  
 ```
 
+## dog ブランチ上での変更
 ブランチがリモートに反映できたことを確認する。
 
 ```console
@@ -262,15 +307,15 @@ git add .
 git commit -m 'change the human to the dog in README.md'
 git push
 ```
-実行結果イメージ：
+状況イメージ：
 ```
 origin
                feature/change-read-me-dog  
-               B'----------E   
+               E   
               /  
-master A-----B---------D
-              \       /
-               B''---C  
+master A-----B----D
+              \  /
+               C  
                feature/change-read-me-cat  
 ```
   
@@ -280,11 +325,11 @@ GitHub のリポジトリを見て、「Compare & pull request」のボタンが
 ```
 origin
                feature/change-read-me-dog  
-               B'----------E   
-              /             \
-master A-----B---------D---- Can’t automatically merge. 
-              \       /
-               B''---C  
+                -----E   
+              /       \
+master A-----B----D---- Can’t automatically merge. 
+              \  /
+               C  
                feature/change-read-me-cat  
 ```
 
