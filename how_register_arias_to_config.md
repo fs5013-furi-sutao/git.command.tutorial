@@ -32,3 +32,17 @@ cat ./.git/config
         lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 ```
+
+これで今、登録した `lg` コマンドが使えるはず。
+
+```console
+git lg
+```
+
+まだコミットされていない段階では、コミットがないよのメッセージが出る。
+
+コミットがない場合の実行結果：
+```
+fatal: your current branch 'master' does not have any commits yet
+```
+
