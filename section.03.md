@@ -83,7 +83,10 @@ cat ./README.md
 
 「犬」から「猿」に書き変わったことを確認する。
 
-## push の失敗
+~~## push の失敗~~
+NOTE:
+> 
+
 ```console
 git add .
 git commit -m 'change the dog to the ape in README.md'
