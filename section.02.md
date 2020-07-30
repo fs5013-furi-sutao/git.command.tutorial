@@ -33,7 +33,7 @@ git checkout -b feature/change-read-me-dog
 git branch
 ```
 実行結果：
-```console
+```
 * feature/change-read-me-dog
   master
 ```
@@ -55,7 +55,7 @@ git checkout master
 git branch
 ```
 実行結果：
-```console
+```
   feature/change-read-me-dog
 * master
 ```
@@ -68,7 +68,7 @@ git checkout -b feature/change-read-me-cat
 git branch
 ```
 実行結果：
-```console
+```
 * feature/change-read-me-cat
   feature/change-read-me-dog
   master
@@ -88,6 +88,7 @@ master A-----B
 
 さらに、新規ブランチ `feature/change-read-me-cat` を切って、そのブランチに移動したことが分かる。ここからは `feature/change-read-me-cat` ブランチ上で作業をする。 
 
+## cat ブランチをリモートへ反映
 `git push -u origin feature/change-read-me-c` まで入力し、Tab キーを押すことで、Git Bash ではブランチ名も補完が効くことを確認する。
 
 ```console
@@ -109,6 +110,8 @@ master A-----B
 ```
   
 `feature/change-read-me-cat` ブランチをリモートに反映できたことを GitHub で確認する。
+
+## cat ブランチ上での変更
 
 ```console
 cat ./README.md
