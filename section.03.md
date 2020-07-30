@@ -164,16 +164,19 @@ cat ./README.md
 ```console
 git stash save
 ```
-実行結果イメージ：
+状況イメージ：
 ```
 local
                feature/change-read-me-dog  
-               B'----E----F 
-              /          / \  
-master A-----B----------D---G  
-              \        /
-               B''----C  
-               feature/change-read-me-cat  
+                  E----F 
+                 /    /　\
+                /    /    \
+               /    /      \
+              /    /        \
+master A-----B----D----------G  
+              \  /
+               C  
+               feature/change-read-me-cat   
                
 stash@{0} ->H
 ```
@@ -196,14 +199,17 @@ git stash apply stash@{0}
 ```
 local
                feature/change-read-me-dog  
-               B'----E----F 
-              /          / \  
-master A-----B----------D---G  
-              \        /     \
-               B''----C       \
-  feature/change-read-me-cat   \
-                                H  
-stash@{0} ->                   feature/change-read-me-ape
+                  E----F 
+                 /    /　\
+                /    /    \
+               /    /      \
+              /    /        \
+master A-----B----D----------G  
+              \  /            \
+               C               \
+  feature/change-read-me-cat    \   
+                                 H
+stash@{0} ->                    feature/change-read-me-ape
 ```
 
 このコマンドでスタックの一番上のスタッシュが新規ブランチ上に戻される。
