@@ -83,8 +83,8 @@ cat ./README.md
 
 「犬」から「猿」に書き変わったことを確認する。
 
-~~## push の失敗~~
-NOTE:
+## ~~push の失敗~~
+NOTE:  
 > 2020年7月30日現在、GitHub Branch Protection の機能では、強制的なプッシュ「git push -f」は防げても、通常の「git push origin master」は防げませんでした
 [GitHub Branch Protection](https://docs.github.com/ja/github/administering-a-repository/configuring-protected-branches)
 
