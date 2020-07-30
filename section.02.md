@@ -302,6 +302,7 @@ cat ./README.md
 
 「犬」に書き変わったことを確認する。
 
+## GitHub 上でのコンフリクト
 ```console
 git add .
 git commit -m 'change the human to the dog in README.md'
@@ -311,8 +312,11 @@ git push
 ```
 origin
                feature/change-read-me-dog  
-               E   
-              /  
+                  E
+                 / 
+                /   
+               /     
+              /       
 master A-----B----D
               \  /
                C  
@@ -325,9 +329,12 @@ GitHub のリポジトリを見て、「Compare & pull request」のボタンが
 ```
 origin
                feature/change-read-me-dog  
-                -----E   
+                  E
+                 / \
+                /   \
+               /     \
               /       \
-master A-----B----D---- Can’t automatically merge. 
+master A-----B----D--- Can’t automatically merge. 
               \  /
                C  
                feature/change-read-me-cat  
@@ -339,8 +346,15 @@ Can’t automatically merge. となっていて、自動マージができない
 
 一度ローカルに戻る。
 
+## master を取り込んでから競合を解決する
 ```console
 git branch
+```
+実行結果：
+```
+  feature/change-read-me-cat
+* feature/change-read-me-dog
+  master
 ```
 
 `feature/change-read-me-dog` ブランチにいることが分かる。
@@ -360,15 +374,18 @@ README.md を自動マージ
 内容がコンフリクトしています： README.md のマージで競合
 自動マージに失敗しました。コンフリクトを修正してから結果をコミットしてください。
 ```
-実行結果イメージ：
+状況イメージ：
 ```
 local
                feature/change-read-me-dog  
-               B'----E----@ CONFLICT.Automatic merge failed.  
-              /          /   
-master A-----B----------D  
-              \        /
-               B''----C  
+                  E----@ CONFLICT.Automatic merge failed.
+                 /    /
+                /    /
+               /    /  
+              /    /    
+master A-----B----D 
+              \  /
+               C  
                feature/change-read-me-cat  
 ```
 
@@ -402,18 +419,46 @@ git commit
 
 vi エディタが開くので、コンフリクトのコミットメッセージが出力されていることを画面で確認できれば、「:q」と入力して、コンフリクトのコミットメッセージをそのまま生かしてコミットを完了させる。
 
+vi の表示内容（コミットメッセージ）:
+```
+Merge branch 'master' into feature/change-read-me-dog
+
+# Conflicts:
+#       README.md
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#       .git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch feature/change-read-me-dog
+# Your branch is up to date with 'origin/feature/change-read-me-dog'.
+#
+# All conflicts fixed but you are still merging.
+#
+```
+
+リモートに push する。
+
 ```console
 git push
 ```
-実行結果イメージ：
+状況イメージ：
 ```
 origin:local
                feature/change-read-me-dog  
-               B'----E----F 
-              /          /   
-master A-----B----------D  
-              \        /
-               B''----C  
+                  E----F 
+                 /    /
+                /    /
+               /    /  
+              /    /    
+master A-----B----D 
+              \  /
+               C  
                feature/change-read-me-cat  
 ```
 
@@ -425,15 +470,18 @@ master A-----B----------D
   
 マージコメント欄に「Feature/change read me dog」が自動入力されたことを確認し、Confirm merge ボタンを押下する。  
   
-実行結果イメージ：
+状況イメージ：
 ```
 origin
                feature/change-read-me-dog  
-               B'----E----F 
-              /          / \  
-master A-----B----------D---G  
-              \        /
-               B''----C  
+                  E----F 
+                 /    /　\
+                /    /    \
+               /    /      \
+              /    /        \
+master A-----B----D----------G 
+              \  /
+               C  
                feature/change-read-me-cat  
 ```
   
