@@ -74,6 +74,12 @@ master A-----B----D----------G
 sed -i 's/犬/猿/' ./README.md
 cat ./README.md
 ```
+実行結果：
+```
+# git.test.dir
+
+私は猿です.
+```
 
 「犬」から「猿」に書き変わったことを確認する。
 
