@@ -5,30 +5,68 @@
 
 ```console
 git branch
+```
+実行結果：
+```
+  feature/change-read-me-cat
+* feature/change-read-me-dog
+  master
+```
+
+dog ブランチにいるので、master ブランチにスイッチする。
+
+```console
 git checkout master
 git branch
 ```
+実行結果：
+```
+  feature/change-read-me-cat
+  feature/change-read-me-dog
+* master
+```
 
-`feature/change-read-me-dog` ブランチにいるので、master にスイッチする。
+master で pull を実行する。
 
 ```console
 cat ./README.md
+```
+実行結果：
+```
+# git.test.dir
+
+私は猫です.
+
+```
+まだ、リモートのマージが反映されておらず「猫」となっているので、pull を実行することで「犬」になったことを確認する。
+
+```console
 git pull
 cat ./README.md
 ```
-実行結果イメージ：
+実行結果：
 ```
-origin:local
+# git.test.dir
+
+私は犬です.
+
+```
+状況イメージ：
+```
+origin
                feature/change-read-me-dog  
-               B'----E----F 
-              /          / \  
-master A-----B----------D---G  
-              \        /
-               B''----C  
+                  E----F 
+                 /    /　\
+                /    /    \
+               /    /      \
+              /    /        \
+master A-----B----D----------G 
+              \  /
+               C  
                feature/change-read-me-cat  
 ```
   
-まだ、リモートのマージが反映されておらず「猫」となっているので、pull を実行することで「犬」になったことを確認する。
+## master での変更
 
 ```console
 sed -i 's/犬/猿/' ./README.md
@@ -42,25 +80,30 @@ git add .
 git commit -m 'change the dog to the ape in README.md'
 git push
 ```
-実行結果イメージ：
+状況イメージ：
 ```
 local
                feature/change-read-me-dog  
-               B'----E----F 
-              /          / \  
-master A-----B----------D---G----H 
-              \        /
-               B''----C  
+                  E----F 
+                 /    /　\
+                /    /    \
+               /    /      \
+              /    /        \
+master A-----B----D----------G----H 
+              \  /
+               C  
                feature/change-read-me-cat  
-```
 ```
 origin
                feature/change-read-me-dog  
-               B'----E----F 
-              /          / \  
-master A-----B----------D---G----@ Reject!  
-              \        /
-               B''----C  
+                  E----F 
+                 /    /　\
+                /    /    \
+               /    /      \
+              /    /        \
+master A-----B----D----------G----@ Reject!  
+              \  /
+               C  
                feature/change-read-me-cat  
 ```
 
