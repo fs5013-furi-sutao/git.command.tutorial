@@ -126,7 +126,7 @@ git add .
 git commit -m 'change the human to the cat in README.md'
 git push
 ```
-実行結果イメージ：
+状況イメージ：
 ```
 local
                feature/change-read-me-dog  
@@ -134,7 +134,7 @@ local
               /  
 master A-----B  
               \  
-               B''---C  
+               C  
                feature/change-read-me-cat  
 ```
 ```
@@ -142,7 +142,7 @@ origin
   
 master A-----B  
               \  
-               B''---C  
+               C  
                feature/change-read-me-cat  
 ```
 
@@ -166,13 +166,13 @@ Finish your review ボタンを押下し、Comment のラジオボタンが選�
 
 これでリモートでのマージが完了。
   
-実行結果イメージ：
+状況イメージ：
 ```
 origin
   
-master A-----B---------D
-              \       /
-               B''---C  
+master A-----B----D
+              \  /
+               C  
                feature/change-read-me-cat  
 ```
   
