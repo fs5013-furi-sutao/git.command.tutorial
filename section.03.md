@@ -121,7 +121,7 @@ master A-----B----D----------G----@ Reject!
                feature/change-read-me-cat  
 ```
 
-禁止されたローカルの master からリモートの master への push だったので、GitHub で行ったブランチの保護設定により、push が失敗したことを確認する。
+~~禁止されたローカルの master からリモートの master への push だったので、GitHub で行ったブランチの保護設定により、push が失敗したことを確認する。~~  
 
 ## git ログの確認
 ```console
