@@ -17,13 +17,16 @@ git branch
 
 コンフリクトや不用意なバグの混入を防ぐために、実際の開発では master ブランチへのコミットを禁止している。
 
-ただし、禁止ルールというだけでは、間違えて master にコミットしてしまうことは防げないので、以下の手順で master ブランチにコミットできないように、master ブランチの保護設定をしておく。
+~~ただし、禁止ルールというだけでは、間違えて master にコミットしてしまうことは防げないので、以下の手順で master ブランチにコミットできないように、master ブランチの保護設定をしておく。~~
 
-GitHub の Settings -> Branches -> Branch protection rules で Add rule ボタンを押下する。
+~~GitHub の Settings -> Branches -> Branch protection rules で Add rule ボタンを押下する。~~
 
-Branch name pattern に master と入力。Include administrators（管理者を含む）のチェックボックスにはチェックを入れ、Create ボタンを押下することで、すべての push から master ブランチを保護することができる。
+~~Branch name pattern に master と入力。Include administrators（管理者を含む）のチェックボックスにはチェックを入れ、Create ボタンを押下することで、すべての push から master ブランチを保護することができる。~~
 
-つまり以降、master ブランチへのコミットは不可能となる。  
+~~つまり以降、master ブランチへのコミットは不可能となる。~~
+
+NOTE:  
+> 2020年7月30日現在、上記取り消し線の内容で、強制的なプッシュ「git push -f」は防げても、通常の「git push origin master」は防げませんでした
 
 ## 新規 dog ブランチの作成
 ここからローカルに戻る。 
