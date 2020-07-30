@@ -3,6 +3,7 @@
 ※チュートリアル中で使われている git コマンド以外のコマンドの説明は以下のファイルを参照  
 [チュートリアル中で使った bash コマンドの説明](./explain_bash_command.md)
 
+## master での pull
 ```console
 git branch
 ```
@@ -27,6 +28,7 @@ git branch
 ```
 
 master で pull を実行する。
+git pull を実行することで、master ブランチにおける、リモートとの差分をローカルに取り込む。
 
 ```console
 cat ./README.md
@@ -75,6 +77,7 @@ cat ./README.md
 
 「犬」から「猿」に書き変わったことを確認する。
 
+## push の失敗
 ```console
 git add .
 git commit -m 'change the dog to the ape in README.md'
@@ -110,6 +113,7 @@ master A-----B----D----------G----@ Reject!
 
 禁止されたローカルの master からリモートの master への push だったので、GitHub で行ったブランチの保護設定により、push が失敗したことを確認する。
 
+## git ログの確認
 ```console
 git log --oneline
 ```
@@ -124,6 +128,7 @@ fa19500 (origin/feature/change-read-me-cat, feature/change-read-me-cat) change t
 ```
 ＝＝＝＝＝
 
+## コミットの取消（soft モードで変更は残す）
 直前のコミットを取り消したいので、上記のログの場合 1 つ前のコミットを指す 4386f2c を指定しても良いが、今回は HEAD を使って、「1つ前のコミット」を指定する。
 
 ```console
