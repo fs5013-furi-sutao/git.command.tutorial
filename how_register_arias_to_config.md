@@ -45,4 +45,7 @@ git lg
 ```
 fatal: your current branch 'master' does not have any commits yet
 ```
-
+  
+コミットがある場合の実行結果：
+![git lg の実行結果](./image/git_log_graph.png)
+  
