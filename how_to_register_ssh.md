@@ -186,6 +186,29 @@ echo Agent pid 2420 killed;
 
 Git Bash を一度、exit させてから、再度 Git Bash を起動させて、ssh-agent の起動、秘密鍵の追加が求められることを確認する。
 
+## remote add や clone での リポジトリ指定方法  
+リモートリポジトリを指定する時は、以下のように指定する。
+
+git clone の場合: 
+```console
+git clone git@[~/.ssh/config ファイルに設定した Host 名]:[GitHub アカウント名]/[リポジトリ名].git
+```
+例: 
+```console
+git clone git@github.com.fs5013-furi-sutao:fs5013-furi-sutao/private.test.git
+```
+
+git remote add の場合: 
+```console
+git remote add origin git@[~/.ssh/config ファイルに設定した Host 名]:[GitHub アカウント名]/[リポジトリ名].git
+```
+例:
+```console
+git remote add origin git@github.com.fs5013-furi-sutao:fs5013-furi-sutao/private.test.git
+```
+
+これで git コマンド実行時には、`~/.ssh/config~` の Host で設定した秘密鍵が使用されるようになる。
+
 ## 終わりに
 以上で、GitHub 複数アカウントの SSH 設定、確認は完了となる。  
   
