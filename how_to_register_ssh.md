@@ -64,7 +64,12 @@ ls -la
 ```
 
 ## SSH 設定ファイルの編集
-SSH 接続の設定ファイルである `~/.ssh/config` を編集する。
+SSH 接続の設定ファイルである `~/.ssh/config` を編集する。  
+
+`~/.ssh` に `config` ファイルがない場合は、次のコマンドで作成する。
+```console
+touch ./config
+```
 
 アカウント毎に SSH 鍵を使い分けるため、SSH 設定ファイルに Host（接続元）の登録を行う。
 
@@ -90,9 +95,9 @@ Host github.com.fs5014-furi-sutao  # 2つ目のアカウント
 ## GitHub に公開鍵を登録する  
 作成した公開鍵を GitHub に登録する。手順は以下の通り。
 
-1. ブラウザを開き、GitHub の対象アカウントから [Settings] -> [SSH and GPG keys] を選択
-2. SSH keys の New SSH keyをクリック
-3. Title 欄に任意の名前を入力
+1.ブラウザを開き、GitHub の対象アカウントから [Settings] -> [SSH and GPG keys] を選択
+2.SSH keys の New SSH keyをクリック
+3.Title 欄に任意の名前を入力
 
 ここで、Key 欄に公開鍵を貼り付けるので、Git Bash で以下のコマンドを実行する。
 ```console
@@ -103,3 +108,37 @@ clip < ~/.ssh/[ファイル名].pub
 
 ブラウザに戻り、Key 欄に公開鍵をペーストする。ペーストしたら、Add SSH key で保存。これで、GitHub の設定は終わり。
 
+## ssh-agent 起動設定
+clone や push の度に秘密鍵のパスフレーズを聞かれるのを省略するために `~/.bashrc` に設定を追記する。
+
+`~/.bashrc` ファイルがない場合は新規作成する。
+```console
+touch ~/.bashrc
+```
+
+`~/.bashrc` には以下の記述をする。
+```
+#ssh-agent
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/~/[ファイル名]
+```
+
+~/.bashrc は、Git Bash 起動時のみ実行されるファイル。
+
+~/.bashrc ファイルに上記の記述をすることで、Git Bash 起動時に ssh-agent を起動し、ssh-agent リストに対象の秘密鍵を追加する。
+追加時には、対象の秘密鍵のパスフレーズを聞かれる。
+
+## ログアウト時の ssh-agent の終了設定
+Git Bash を閉じた時に、`~/.bashrc` で起動した ssh-agent を終了させたい。
+
+それには、`~/.bash_logout` ファイルへの記述が必要となる。
+
+`~/.bash_logout` ファイルがない場合は新規作成する。
+```console
+touch ~/.bash_logout
+```
+
+`~/.bash_logout` には以下の記述をする。
+```
+ssh-agent -k
+```
