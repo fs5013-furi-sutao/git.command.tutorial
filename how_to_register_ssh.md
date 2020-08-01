@@ -23,7 +23,8 @@ Enter same passphrase again:
 ```
 
 2 回入力したパスフレーズが一致していたら、鍵の作成が実行される。
-```console
+実行結果：
+```
 Your identification has been saved in /c/Users/natsuki/.ssh/rsa_github_fs5013-furi-sutao
 Your public key has been saved in /c/Users/natsuki/.ssh/rsa_github_fs5013-furi-sutao.pub
 The key fingerprint is:
@@ -44,3 +45,12 @@ The key's randomart image is:
 
 
 秘密鍵と公開鍵ができていることを確認する。
+
+```console
+ls -la
+```
+実行結果：
+```
+-rw-r--r-- 1 natsuki 197121 3434  8月  2 05:28 rsa_github_fs5013-furi-sutao
+-rw-r--r-- 1 natsuki 197121  744  8月  2 05:28 rsa_github_fs5013-furi-sutao.pub
+```
