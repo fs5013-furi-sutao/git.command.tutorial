@@ -142,3 +142,29 @@ touch ~/.bash_logout
 ```
 ssh-agent -k
 ```
+
+## ~/.bashrc の読み込み確認
+Git Bash の起動時に、先ほど設定した `~/.bashrc` の設定が読み込まれ、ssh-agent に対象の秘密鍵が追加されるかを確認する。
+
+Git Bash の起動時にパスフレーズを聞かれたら、設定、および読み込みが成功。
+
+起動時のパスフレーズ要求:
+```
+Agent pid [プロセスID]
+Enter passphrase for /c/Users/natsuki/.ssh/[対象秘密鍵のファイル名]:
+```
+
+パスフレーズを入力し、認証が成功すると以下のメッセージが表示される。
+
+秘密鍵追加成功時のメッセージ:
+```
+Identity added: /c/Users/natsuki/.ssh/rsa_github_fs5013-furi-sutao (natsuki@MyComputer)
+```
+
+## SSH 接続できるかを確認
+ssh コマンドで GitHub に SSH 接続できるかを確認する。
+
+```console
+ssh -T git@[`~/.ssh/config` ファイルに設定した Host 名]
+```
+
