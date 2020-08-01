@@ -25,23 +25,23 @@ section.01 ～ section.03 までシナリオが一連の流れとなっている
 - [x] リモートリポジトリ  
 - [x] ベアリポジトリ  
 - [x] git clone  
-☑ git config(--local user.name, user.email)  
-☑ git branch  
-☑ git checkout(-b)  
-☑ git add  
-☑ git commit -m  
-☑ git push(-u, --set-upstream)  
-☑ git status  
-☑ git log(--oneline)  
-☑ git stash  
-☑ git reset(--soft, --hard)  
-☑ git merge  
-☑ git fetch  
-☑ git pull  
-☑ HEAD^  
-☑ コンフリクト  
-☑ プルリクエスト（GitHub）  
-☑ マージリクエスト（GitLab）  
+- [x] git config(--local user.name, user.email)  
+- [x] git branch  
+- [x] git checkout(-b)  
+- [x] git add  
+- [x] git commit -m  
+- [x] git push(-u, --set-upstream)  
+- [x] git status  
+- [x] git log(--oneline)  
+- [x] git stash  
+- [x] git reset(--soft, --hard)  
+- [x] git merge  
+- [x] git fetch  
+- [x] git pull  
+- [x] HEAD^  
+- [x] コンフリクト  
+- [x] プルリクエスト（GitHub）  
+- [x] マージリクエスト（GitLab）  
   
 # 実際の大規模開発イメージ
 
