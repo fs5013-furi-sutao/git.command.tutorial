@@ -57,3 +57,34 @@ ls -la
 
 ## SSH 設定ファイルの編集
 SSH 接続の設定ファイルである `~/.ssh/config` を編集する。
+
+アカウント毎に SSH 鍵を使い分けるため、SSH 設定ファイルに Host（接続元）の登録を行う。
+
+`~/.ssh/config` ファイルの内容:
+```
+Host github.com.fs5013-furi-sutao  # 1つ目のアカウント
+  HostName github.com
+  User git
+  Port 22
+  IdentityFile ~/.ssh/rsa_github_fs5013-furi-sutao  # 1つ目のアカウント用の秘密鍵
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+
+Host github.com.fs5014-furi-sutao  # 2つ目のアカウント
+  HostName github.com
+  User git
+  Port 22
+  IdentityFile ~/.ssh/rsa_github_fs5014-furi-sutao　 # 2つ目のアカウント用の秘密鍵
+  TCPKeepAlive yes
+  IdentitiesOnly yes
+```
+
+## GitHub に公開鍵を登録する  
+作成した公開鍵を GitHub に登録する。手順は以下の通り。
+
+1. ブラウザを開き、GitHubのSettings->SSH and GPG keysに行きます。
+2. SSH keysのNew SSH keyをクリックします。
+3. Titleに適当な名前を付けます。
+4. 下のKeyに公開鍵を貼り付けるのですが、ここでGit Bashの方に戻ります。
+
+Githubにログインして、[Settings] -> [SSH keys] -> [Add SSH key]で作成した公開鍵を登録します。
