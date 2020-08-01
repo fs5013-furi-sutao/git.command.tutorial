@@ -98,3 +98,8 @@ Host github.com.fs5014-furi-sutao  # 2つ目のアカウント
 ```console
 clip < ~/.ssh/[ファイル名].pub
 ```
+
+これでクリップボードに公開鍵がコピーされる。
+
+ブラウザに戻り、Key 欄に公開鍵をペーストする。ペーストしたら、Add SSH key で保存。これで、GitHub の設定は終わり。
+
