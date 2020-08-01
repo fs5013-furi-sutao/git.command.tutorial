@@ -54,3 +54,6 @@ ls -la
 -rw-r--r-- 1 natsuki 197121 3434  8月  2 05:28 rsa_github_fs5013-furi-sutao
 -rw-r--r-- 1 natsuki 197121  744  8月  2 05:28 rsa_github_fs5013-furi-sutao.pub
 ```
+
+## SSH 設定ファイルの編集
+SSH 接続の設定ファイルである `~/.ssh/config` を編集する。
