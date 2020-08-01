@@ -18,7 +18,8 @@ section.01 ～ section.03 までシナリオが一連の流れとなっている
 何度もコマンドを打って、サクサク操作できるようになってね～  
 
 ### その他: 補足事項  
-[config ファイルにエイリアスを登録する方法](./how_register_arias_to_config.md)
+- [config ファイルにエイリアスを登録する方法](./how_register_arias_to_config.md)
+- [Git Bashで GitHub に SSH 接続する設定（複数アカウント版）](./how_to_register_ssh.md)
   
 # Git 用語チェックリスト  
   
