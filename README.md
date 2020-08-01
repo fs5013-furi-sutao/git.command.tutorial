@@ -21,10 +21,10 @@ section.01 ～ section.03 までシナリオが一連の流れとなっている
   
 覚えたいキーワードは以下の通り。日々、Git を使いながら、少しずつ理解を深めよう。  
 
-☑ ローカルリポジトリ  
-☑ リモートリポジトリ  
-☑ ベアリポジトリ  
-☑ git clone  
+- [x] ローカルリポジトリ  
+- [x] リモートリポジトリ  
+- [x] ベアリポジトリ  
+- [x] git clone  
 ☑ git config(--local user.name, user.email)  
 ☑ git branch  
 ☑ git checkout(-b)  
