@@ -101,7 +101,7 @@ git config --local user.name fs5013-furi-sutao
 git config --local user.email fs5013.furi.sutao@gmail.com
 ```
   
-git を使い慣れてきたら、git のログを見やすくする設定もしておきましょう。
+git を使い慣れてきたら、git のログを見やすくする設定もしておく。
 
 git のログを見やすくするには、長い記述のオプションを打つ必要が出てきてしまいます。
 毎回長いオプションを打たなくても、短いコマンドで済むように、コマンドにエイリアス（別名）を登録する機能が git にある。  
@@ -162,7 +162,7 @@ origin というのが、デフォルトのリモートリポジトリの名前�
 `git config` に登録した `user` と `remote` が反映されていることを確認する。
 
 ローカルリポジトリの config へのパスワードの記載は、セキュリティの観点上、良くないので、コマンド類や仕組みの扱いに慣れてきたら SSH 鍵での認証を行うようにする。  
-[Git Bashで GitHub に SSH 接続する設定（複数アカウント版）](./how_to_register_ssh.md)
+[Git Bashで GitHub への SSH 接続の設定をする（複数アカウント版）](./how_to_register_ssh.md)
   
 ### リモートリポジトリへのプッシュ  
 ```console
