@@ -207,7 +207,7 @@ git remote add origin git@[~/.ssh/config ファイルに設定した Host 名]:[
 git remote add origin git@github.com.fs5013-furi-sutao:fs5013-furi-sutao/private.test.git
 ```
 
-これで git コマンド実行時には、`~/.ssh/config~` の Host で設定した秘密鍵が使用されるようになる。
+これで git コマンド実行時には、`~/.ssh/config` の Host で設定した秘密鍵が使用されるようになる。
 
 ## 終わりに
 以上で、GitHub 複数アカウントの SSH 設定、確認は完了となる。  
