@@ -165,6 +165,27 @@ Identity added: /c/Users/natsuki/.ssh/rsa_github_fs5013-furi-sutao (natsuki@MyCo
 ssh コマンドで GitHub に SSH 接続できるかを確認する。
 
 ```console
-ssh -T git@[`~/.ssh/config` ファイルに設定した Host 名]
+ssh -T git@[~/.ssh/config ファイルに設定した Host 名]
 ```
 
+接続が成功すれば、以下のメッセージが表示される。
+```
+Hi [ユーザ名]! You've successfully authenticated, but GitHub does not provide shell access.
+```
+
+## ログアウト時に ssh-agent がログアウトできているかを確認する
+Git Bash の終了時に、`~/.bash_logout` が読み込まれ、先ほど記述した `ssh-agent kill` スクリプトが実行されていれば、以下のメッセージが表示される。
+```
+logout
+unset SSH_AUTH_SOCK;
+unset SSH_AGENT_PID;
+echo Agent pid 2420 killed;
+```
+
+が、メッセージ表示後、瞬時にコンソールが閉じられるので、メッセージを確認するのは難しい。
+
+Git Bash を一度、exit させてから、再度 Git Bash を起動させて、ssh-agent の起動、秘密鍵の追加が求められることを確認する。
+
+## 終わりに
+以上で、GitHub 複数アカウントの SSH 設定、確認は完了となる。  
+  
