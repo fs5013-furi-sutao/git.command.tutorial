@@ -43,9 +43,17 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
+SSH 鍵が格納されているディレクトリに移動する。
+```console
+cd ~/.ssh
+pwd
+```
+実行結果：
+```
+/c/Users/[ユーザ名]/.ssh
+```
 
 秘密鍵と公開鍵ができていることを確認する。
-
 ```console
 ls -la
 ```
@@ -82,9 +90,11 @@ Host github.com.fs5014-furi-sutao  # 2つ目のアカウント
 ## GitHub に公開鍵を登録する  
 作成した公開鍵を GitHub に登録する。手順は以下の通り。
 
-1. ブラウザを開き、GitHubのSettings->SSH and GPG keysに行きます。
-2. SSH keysのNew SSH keyをクリックします。
-3. Titleに適当な名前を付けます。
-4. 下のKeyに公開鍵を貼り付けるのですが、ここでGit Bashの方に戻ります。
+1. ブラウザを開き、GitHub の対象アカウントから [Settings] -> [SSH and GPG keys] を選択
+2. SSH keys の New SSH keyをクリック
+3. Title 欄に任意の名前を入力
 
-Githubにログインして、[Settings] -> [SSH keys] -> [Add SSH key]で作成した公開鍵を登録します。
+ここで、Key 欄に公開鍵を貼り付けるので、Git Bash で以下のコマンドを実行する。
+```console
+clip < ~/.ssh/[ファイル名].pub
+```
