@@ -130,10 +130,15 @@ git log --oneline
 履歴ログ
 ＝＝＝＝＝
 ```console
-e4efe2f (HEAD -> master) change the dog to the ape in README.md
-4386f2c Merge pull request #1 from fs5013-furi-sutao/feature/change-read-me-cat
-fa19500 (origin/feature/change-read-me-cat, feature/change-read-me-cat) change the human to the cat in README.md
-554ce21 first commit
+6a34b60 (HEAD -> master) change the dog to the ape in README.md
+cc62efd (origin/master) Merge pull request #3 from fs5013-furi-sutao/feature/add-git-hook-pre-push
+6aa1fa2 (origin/feature/add-git-hook-pre-push, feature/add-git-hook-pre-push) add pre-push of git hook
+5720fb3 Merge pull request #2 from fs5013-furi-sutao/feature/change-read-me-dog
+20be75a (origin/feature/change-read-me-dog, feature/change-read-me-dog) Merge branch 'master' into feature/change-read-me-dog
+a3e110b change the human to the dog in README.md
+c90c600 Merge pull request #1 from fs5013-furi-sutao/feature/change-read-me-cat
+e66d12e (origin/feature/change-read-me-cat, feature/change-read-me-cat) change the human to the cat in README.md
+0cd37f9 first commit
 ```
 ＝＝＝＝＝
 
@@ -150,9 +155,14 @@ git log --oneline
 履歴ログ
 ＝＝＝＝＝
 ```console
-4386f2c (HEAD -> master) Merge pull request #1 from fs5013-furi-sutao/feature/change-read-me-cat
-fa19500 (origin/feature/change-read-me-cat, feature/change-read-me-cat) change the human to the cat in README.md
-554ce21 first commit
+cc62efd (HEAD -> master, origin/master) Merge pull request #3 from fs5013-furi-sutao/feature/add-git-hook-pre-push
+6aa1fa2 (origin/feature/add-git-hook-pre-push, feature/add-git-hook-pre-push) add pre-push of git hook
+5720fb3 Merge pull request #2 from fs5013-furi-sutao/feature/change-read-me-dog
+20be75a (origin/feature/change-read-me-dog, feature/change-read-me-dog) Merge branch 'master' into feature/change-read-me-dog
+a3e110b change the human to the dog in README.md
+c90c600 Merge pull request #1 from fs5013-furi-sutao/feature/change-read-me-cat
+e66d12e (origin/feature/change-read-me-cat, feature/change-read-me-cat) change the human to the cat in README.md
+0cd37f9 first commit
 ```
 ＝＝＝＝＝
 
@@ -176,18 +186,19 @@ git stash save
 状況イメージ：
 ```
 local
-               feature/change-read-me-dog  
-                  E----F 
-                 /    /　\
-                /    /    \
-               /    /      \
-              /    /        \
-master A-----B----D----------G  
+                                  feature/add-git-hook-pre-push
+   feature/change-read-me-dog      H
+                  E----F          / \
+                 /    /　\       /   \
+                /    /    \     /     \
+               /    /      \   /       \
+              /    /        \ /         \
+master A-----B----D----------G-----------I  
               \  /
                C  
-               feature/change-read-me-cat   
+               feature/change-read-me-cat  
                
-stash@{0} ->H
+stash@{0} ->J
 ```
 
 これで変更が退避されたので、退避リストを確認する。
@@ -207,18 +218,19 @@ git stash apply stash@{0}
 実行結果イメージ：
 ```
 local
-               feature/change-read-me-dog  
-                  E----F 
-                 /    /　\
-                /    /    \
-               /    /      \
-              /    /        \
-master A-----B----D----------G  
-              \  /            \
-               C               \
-  feature/change-read-me-cat    \   
-                                 H
-stash@{0} ->                    feature/change-read-me-ape
+                                  feature/add-git-hook-pre-push
+   feature/change-read-me-dog      H
+                  E----F          / \
+                 /    /　\       /   \
+                /    /    \     /     \
+               /    /      \   /       \
+              /    /        \ /         \
+master A-----B----D----------G-----------I  
+              \  /                        \
+               C                           \
+               feature/change-read-me-cat   \
+                                             J
+stash@{0} ->                                feature/change-read-me-ape
 ```
 
 このコマンドでスタックの一番上のスタッシュが新規ブランチ上に戻される。
