@@ -69,6 +69,8 @@ master A-----B----D----------G
 ```
   
 ## master での変更
+禁止された master への変更を検証する前に、以前に説明した git hook の追加作業を実施しておく。
+[master への push を禁止する共有 git hook の作成方法](./how_to_protected_from_pushing_origin_master.md)
 
 ```console
 sed -i 's/犬/猿/' ./README.md
