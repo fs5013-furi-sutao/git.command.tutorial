@@ -260,20 +260,24 @@ git push
 ```console
 git checkout master
 git pull
-git log --oneline
+git lg
 ```
 実行結果イメージ：
 ```
 origin:local
-               feature/change-read-me-dog  
-               B'----E----F 
-              /          / \  
-master A-----B----------D---G------I  
-              \        /     \    /
-               B''----C       \  /
-  feature/change-read-me-cat   \/
-                                H  
-                              feature/change-read-me-ape
+                                  feature/add-git-hook-pre-push
+   feature/change-read-me-dog      H
+                  E----F          / \
+                 /    /　\       /   \
+                /    /    \     /     \
+               /    /      \   /       \
+              /    /        \ /         \
+master A-----B----D----------G-----------I-------K  
+              \  /                        \     /
+               C                           \   /
+               feature/change-read-me-cat   \ /
+                                             J
+                                            feature/change-read-me-ape
 ```
 
 ## 今後の特訓 
