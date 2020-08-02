@@ -67,4 +67,37 @@ cat ./.git/config
         email = fs5013.furi.sutao@gmail.com
 ```
 
+`.githooks/pre-push` ファイルの権限を確認する。
+```console
+ls -la ./.githooks/pre-push
+```
+実行結果:
+```
+-rw-r--r-- 1 natsuki 197121 0  8月  2 23:50 ./.githooks/pre-push
+```
 
+`.githooks/pre-push` ファイルに実行権限を与える
+```console
+chmod a+x ./.githooks/pre-push
+ls -la ./.githooks/pre-push
+```
+実行結果:
+```
+-rw-r--r-- 1 natsuki 197121 0  8月  2 23:50 ./.githooks/pre-push
+```
+
+これでpushをすると、pre-pushに書いてあるスクリプトが実行される。
+
+## pre-pushの設定
+pre-push hook を以下のような感じにする。
+```bash
+#!/bin/bash
+
+while read local_ref local_sha1 remote_ref remote_sha1
+do
+  if [[ "${remote_ref##refs/heads/}" = "master" ]]; then
+    echo "Do not push to master branch!!!"
+    exit 1
+  fi
+done
+```
