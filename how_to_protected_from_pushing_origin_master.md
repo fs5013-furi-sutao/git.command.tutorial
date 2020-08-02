@@ -34,7 +34,13 @@ drwxr-xr-x 1 natsuki 197121    0  8月  2 23:33 ../
 
 そこで読み込みに行くディレクトリを変更する。
 
-まずは hooks ファイルを格納するディレクトリとして、レポジトリ直下に `.githooks` というディレクトリを作る。
+まずは、ディレクトリを作成する前に、git hook 追加作業用のブランチを切っておく（状況に応じて、適切にブランチを切っておく）。
+```console
+git checkout -b feature/add-git-hook-pre-push
+git push -u origin feature/add-git-hook-pre-push
+```
+
+hooks ファイルを格納するディレクトリとして、レポジトリ直下に `.githooks` というディレクトリを作る。
 
 ```console
 mkdir ./.githooks
@@ -67,26 +73,7 @@ cat ./.git/config
         email = fs5013.furi.sutao@gmail.com
 ```
 
-`.githooks/pre-push` ファイルの権限を確認する。
-```console
-ls -la ./.githooks/pre-push
-```
-実行結果:
-```
--rw-r--r-- 1 natsuki 197121 0  8月  2 23:50 ./.githooks/pre-push
-```
-
-`.githooks/pre-push` ファイルに実行権限を与える
-```console
-chmod a+x ./.githooks/pre-push
-ls -la ./.githooks/pre-push
-```
-実行結果:
-```
--rw-r--r-- 1 natsuki 197121 0  8月  2 23:50 ./.githooks/pre-push
-```
-
-これでpushをすると、pre-pushに書いてあるスクリプトが実行される。
+Windows 10 の場合は、これで push をすると、pre-pushに書いてあるスクリプトが実行される。
 
 ## pre-pushの設定
 pre-push hook を以下のような感じにする。
@@ -102,3 +89,18 @@ do
   fi
 done
 ```
+
+## 変更の add, commit, push
+git hook を追加した変更をリモートの反映まで済ませておく。
+```console
+git add .
+git commit -m 'add pre-push of git hook'
+git push
+```
+
+最後に master ブランチに切り替えておく。
+```console
+git checkout master
+```
+
+
