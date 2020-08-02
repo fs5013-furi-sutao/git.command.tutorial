@@ -85,7 +85,7 @@ cat ./README.md
 
 「犬」から「猿」に書き変わったことを確認する。
 
-## ~~push の失敗~~
+## push の失敗
 NOTE:  
 > 2020年7月30日現在、GitHub Branch Protection の機能では、強制的なプッシュ「git push -f」は防げても、通常の「git push origin master」は防げませんでした  
 [GitHub Branch Protection](https://docs.github.com/ja/github/administering-a-repository/configuring-protected-branches)  
@@ -95,16 +95,24 @@ git add .
 git commit -m 'change the dog to the ape in README.md'
 git push
 ```
+実行結果:
+```
+master branch への push は禁止です. Do not push to master branch!!!
+pull request ベースの開発フローを厳守してください.
+error: failed to push some refs to 'git@github.com.fs5013-furi-sutao:fs5013-furi-sutao/git.test.dir.git'
+
+```
 状況イメージ：
 ```
 local
-               feature/change-read-me-dog  
-                  E----F 
-                 /    /　\
-                /    /    \
-               /    /      \
-              /    /        \
-master A-----B----D----------G----H 
+                                  feature/change-read-me-cat
+   feature/change-read-me-dog      H
+                  E----F          / \
+                 /    /　\       /   \
+                /    /    \     /     \
+               /    /      \   /       \
+              /    /        \ /         \
+master A-----B----D----------G-----------I----J 
               \  /
                C  
                feature/change-read-me-cat  
