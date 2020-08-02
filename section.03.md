@@ -265,10 +265,21 @@ master A-----B----------D---G------I
                               feature/change-read-me-ape
 ```
 
+## 今後の特訓 
 今回は git status を使わなかったが適宜、git status で状態を確認しながらコミットやブランチの操作を行っていく。  
 
 あとは、このリモートリポジトリをローカルの別の場所に git clone してみよう。  
-  
+
+## リモートリポジトリの削除方法  
+対象リモートリポジトリの [Settings] -> [Danger Zone] 欄の [Delete this repository] にある Delete this repository ボタンをクリックする。
+
+クリック後にダイアログが出現するので、フォームに `[GitHub アカウント名/リポジトリ名]` を入力して、「I understand consequences, delete this repository.」ボタンをクリックする。
+
+## ローカルリポジトリの削除方法
+ローカルリポジトリ直下にある git オブジェクト（.git フォルダ）を削除すれば、ローカルの git 追跡は無くなる。
+.git フォルダ内に、すべてのローカルのバージョン管理の履歴が残っているためである。
+
+## チュートリアルまとめ
 以上。  
   
 一連の git コマンドのチュートリアルは終わり。  
