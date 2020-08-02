@@ -96,7 +96,7 @@ pre-push hook を以下のような感じにする。
 while read local_ref local_sha1 remote_ref remote_sha1
 do
   if [[ "${remote_ref##refs/heads/}" = "master" ]]; then
-    echo 'master branch への push は禁止です !!!' 
+    echo 'master branch への push は禁止です. Do not push to master branch!!!' 
     echo 'pull request ベースの開発フローを厳守してください.'
     exit 1
   fi
