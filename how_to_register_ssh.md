@@ -12,7 +12,7 @@ ssh-keygen -t [暗号方式] -b [ビット長] -f ~/.ssh/[ファイル名]
 ```
 例:
 ```console
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/rsa_github_fs5013-furi-sutao
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/rsa_github.com.fs5013-furi-sutao
 ```
 
 パスフレーズを 2 回聞かれるので、2 回ともに同じ「設定したいパスワード」を入力する。
@@ -25,21 +25,21 @@ Enter same passphrase again:
 2 回入力したパスフレーズが一致していたら、鍵の作成が実行される。
 実行結果：
 ```
-Your identification has been saved in /c/Users/natsuki/.ssh/rsa_github_fs5013-furi-sutao
-Your public key has been saved in /c/Users/natsuki/.ssh/rsa_github_fs5013-furi-sutao.pub
+Your identification has been saved in /c/Users/natsuki/.ssh/rsa_github.com.fs5013-furi-sutao
+Your public key has been saved in /c/Users/natsuki/.ssh/rsa_github.com.fs5013-furi-sutao.pub
 The key fingerprint is:
-SHA256:M+j8SIEPKNS66YkGF5kv+c4qGhZfB2VMoRXNbOcs7Jw natsuki@MyComputer
+SHA256:1uc8AIP8sxFOMwcAE184WkCXaYyINra2L/4ZxAwMNoA natsuki@MyComputer
 The key's randomart image is:
 +---[RSA 4096]----+
-|      oB*        |
-|  .   =. = .     |
-| . + o  o +      |
-|. =. ... o o     |
-|.o.+o.o.S o      |
-|..O o=.. E       |
-|o= +  =          |
-|=o.... o         |
-|=+.oo . .        |
+|=+ o**o=o        |
+|E+o .=Oo .       |
+|ooo  ++.B .      |
+| o+ .  + O       |
+|. .+    S o .    |
+| ..    . + =     |
+|  ..    .   +    |
+| . .o        .   |
+|..oo             |
 +----[SHA256]-----+
 ```
 
@@ -79,7 +79,7 @@ Host github.com.fs5013-furi-sutao  # 1つ目のアカウント
   HostName github.com
   User git
   Port 22
-  IdentityFile ~/.ssh/rsa_github_fs5013-furi-sutao  # 1つ目のアカウント用の秘密鍵
+  IdentityFile ~/.ssh/rsa_github.com.fs5013-furi-sutao  # 1つ目のアカウント用の秘密鍵
   TCPKeepAlive yes
   IdentitiesOnly yes
 
@@ -87,7 +87,7 @@ Host github.com.fs5014-furi-sutao  # 2つ目のアカウント
   HostName github.com
   User git
   Port 22
-  IdentityFile ~/.ssh/rsa_github_fs5014-furi-sutao　 # 2つ目のアカウント用の秘密鍵
+  IdentityFile ~/.ssh/rsa_github.com.fs5014-furi-sutao　 # 2つ目のアカウント用の秘密鍵
   TCPKeepAlive yes
   IdentitiesOnly yes
 ```
@@ -102,6 +102,10 @@ Host github.com.fs5014-furi-sutao  # 2つ目のアカウント
 ここで、Key 欄に公開鍵を貼り付けるので、Git Bash で以下のコマンドを実行する。
 ```console
 clip < ~/.ssh/[ファイル名].pub
+```
+例:
+```console
+clip < ~/.ssh/rsa_github.com.fs5013-furi-sutao.pub
 ```
 
 これでクリップボードに公開鍵がコピーされる。
