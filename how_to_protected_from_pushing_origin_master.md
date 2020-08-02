@@ -1,12 +1,12 @@
 # master への push を禁止するローカル git hook の正しい書き方
 
 ## GitHooksとは
-ざっくり言うとcommit, pushなどをトリガーに何かアクションを走らせる設定のこと。
+ざっくり言うと commit, push などをトリガーに何かアクションを走らせる設定のこと。
 
 ## GitHooksの設定共有
-デフォルトだとレポジトリ直下の .git/hooks ディレクトリを読み込みに行く。
+デフォルトだとレポジトリ直下の `.git/hooks` ディレクトリを読み込みに行く。
 
-.git/hooks ディレクトリの中に各hooksファイルとサンプルがあり、これらが実行される。
+`.git/hooks` ディレクトリの中に各 hooks ファイルとサンプルがあり、これらが実行される。
 
 ```console
 ls -la ./.git/hooks/
@@ -29,3 +29,42 @@ drwxr-xr-x 1 natsuki 197121    0  8月  2 23:33 ../
 -rwxr-xr-x 1 natsuki 197121  544  8月  2 23:30 pre-receive.sample*
 -rwxr-xr-x 1 natsuki 197121 3635  8月  2 23:30 update.sample*
 ```
+
+ところが、通常 `.git` ディレクトリは GitHub で共有されない。
+
+そこで読み込みに行くディレクトリを変更する。
+
+まずは hooks ファイルを格納するディレクトリとして、レポジトリ直下に `.githooks` というディレクトリを作る。
+
+```console
+mkdir ./.githooks
+```
+
+この中に必要な hooks ファイルを作成する。今回は push の前にコマンドを走らせたいので、`pre-push` としてファイルを作る。
+
+```console
+touch ./.githooks/pre-push
+```
+
+この `.githooks/pre-push` ファイルを読み込むようにローカルの config ファイルに登録しておく。
+
+```console
+git config --local core.hooksPath .githooks
+cat ./.git/config
+```
+実行結果:
+```console
+[core]
+        repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = true
+        symlinks = false
+        ignorecase = true
+        hooksPath = .githooks
+[user]
+        name = fs5013-furi-sutao
+        email = fs5013.furi.sutao@gmail.com
+```
+
+
