@@ -105,33 +105,22 @@ error: failed to push some refs to 'git@github.com.fs5013-furi-sutao:fs5013-furi
 状況イメージ：
 ```
 local
-                                  feature/change-read-me-cat
+                                  feature/add-git-hook-pre-push
    feature/change-read-me-dog      H
                   E----F          / \
                  /    /　\       /   \
                 /    /    \     /     \
                /    /      \   /       \
               /    /        \ /         \
-master A-----B----D----------G-----------I----J 
-              \  /
-               C  
-               feature/change-read-me-cat  
-```
-```
-origin
-               feature/change-read-me-dog  
-                  E----F 
-                 /    /　\
-                /    /    \
-               /    /      \
-              /    /        \
-master A-----B----D----------G----@ Reject!  
+master A-----B----D----------G-----------I----J <--Stop pushing to master by git 'pre-push' hook! 
               \  /
                C  
                feature/change-read-me-cat  
 ```
 
 ~~禁止されたローカルの master からリモートの master への push だったので、GitHub で行ったブランチの保護設定により、push が失敗したことを確認する。~~  
+
+禁止されたローカルの master からリモートの master への push だったので、git hook として設定した pre-push スクリプトにより、git push が中止されたことを確認する。
 
 ## git ログの確認
 ```console
