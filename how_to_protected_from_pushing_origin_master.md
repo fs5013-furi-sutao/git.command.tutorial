@@ -179,5 +179,5 @@ drwxr-xr-x 1 natsuki 197121  0  8月  3 01:42 .githooks/
 
 git reset の `--hard` オプションによって、直近の変更の消去までできたことも確認できた。
   
-以上で、git hook の追加作業は、完了となる。  
+以上で、git hook の追加・確認の作業は、完了となる。  
   
