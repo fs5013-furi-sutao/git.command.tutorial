@@ -20,7 +20,8 @@ section.01 ～ section.03 までシナリオが一連の流れとなっている
 ### その他: 補足事項  
 - [チュートリアル中で使った bash コマンドの説明](./explain_bash_command.md)  
 - [config ファイルにエイリアスを登録する方法](./how_register_arias_to_config.md)
-- [Git Bashで GitHub への SSH 接続の設定をする（複数アカウント版）](./how_to_register_ssh.md)
+- [Git Bashで GitHub への SSH 接続の設定をする（複数アカウント版）](./how_to_register_ssh.md)  
+[master への push を禁止する共有 git hook の作成方法](./how_to_protected_from_pushing_origin_master.md)
   
 # Git 用語チェックリスト  
   
