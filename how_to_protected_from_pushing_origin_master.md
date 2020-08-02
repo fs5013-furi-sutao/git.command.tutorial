@@ -1,4 +1,4 @@
-# master への push を禁止するローカル git hook の正しい書き方
+# master への push を禁止する共有 git hook の作成方法  
 
 ## GitHooksとは
 ざっくり言うと commit, push などをトリガーに何かアクションを走らせる設定のこと。
