@@ -103,4 +103,22 @@ git push
 git checkout master
 ```
 
+## git hook の読み込み
+git hook を読み込ませるために一度、GitBash を閉じる。
+```console
+exit
+```
+
+再び GitBash を起動し、ローカルリポジトリに移動しておく。
+```console
+pwd
+```
+実行結果:
+```
+/c/git.test.dir
+```
+
+## git push が禁止できているかをチェック
+
+
 
