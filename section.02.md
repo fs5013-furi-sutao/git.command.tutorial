@@ -31,6 +31,8 @@ NOTE:
 代わりに、master への push を開発チームで機械的に防ぐために、git hook を走らせる仕組みを作っておきましょう。  
 
 以下にその方法を説明しているが、このチュートリアルの流れの中でのちほど、この git hook 追加作業を実施することにする。  
+
+現時点では実行しない:  
 [master への push を禁止する共有 git hook の作成方法](./how_to_protected_from_pushing_origin_master.md)
 
 ## 新規 dog ブランチの作成
