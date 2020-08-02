@@ -280,6 +280,8 @@ master A-----B----D----------G-----------I-------K
                                             feature/change-read-me-ape
 ```
 
+![git lg の実行結果](./image/git_log_graph.png)
+
 ## 今後の特訓 
 今回は git status を使わなかったが適宜、git status で状態を確認しながらコミットやブランチの操作を行っていく。  
 
