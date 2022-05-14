@@ -10,7 +10,7 @@ section.01 ～ section.03 までシナリオが一連の流れとなっている
 [リポジトリの作成からプッシュまで](./section.01.md)  
   
 ## section.02  
-[master ブランチの保護とコンフリクトの解決](./section.02.md)  
+[main ブランチの保護とコンフリクトの解決](./section.02.md)  
   
 ## section.03  
 [誤ったコミットの解決とスタッシュ](./section.03.md)  
@@ -21,7 +21,7 @@ section.01 ～ section.03 までシナリオが一連の流れとなっている
 - [チュートリアル中で使った bash コマンドの説明](./explain_bash_command.md)  
 - [config ファイルにエイリアスを登録する方法](./how_register_arias_to_config.md)
 - [Git Bashで GitHub への SSH 接続の設定をする（複数アカウント版）](./how_to_register_ssh.md)  
-- [master への push を禁止する共有 git hook の作成方法](./how_to_protected_from_pushing_origin_master.md)
+- [main への push を禁止する共有 git hook の作成方法](./how_to_protected_from_pushing_origin_master.md)
   
 # Git 用語チェックリスト  
   
