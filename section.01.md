@@ -145,8 +145,8 @@ origin というのが、デフォルトのリモートリポジトリの名前�
         symlinks = false
         ignorecase = true
 [user]
-        name = fs5013-furi-sutao
-        email = fs5013.furi.sutao@gmail.com
+        name = yamada-taro
+        email = yamada-taro@gmail.com
 [remote "origin"]
         url = https://<ユーザ名>:<パスワード>@github.com/<GitHubアカウント名>/git.test.dir.git
         fetch = +refs/heads/*:refs/remotes/origin/*
