@@ -11,7 +11,7 @@ git branch
 ```
   feature/change-read-me-cat
 * feature/change-read-me-dog
-  master
+  main
 ```
 
 dog ブランチにいるので、master ブランチにスイッチする。
@@ -24,7 +24,7 @@ git branch
 ```
   feature/change-read-me-cat
   feature/change-read-me-dog
-* master
+* main
 ```
 
 master で pull を実行する。
@@ -56,21 +56,21 @@ cat ./README.md
 状況イメージ：
 ```
 origin
-               feature/change-read-me-dog  
-                  E----F 
-                 /    /　\
-                /    /    \
-               /    /      \
-              /    /        \
-master A-----B----D----------G 
-              \  /
-               C  
-               feature/change-read-me-cat  
+             feature/change-read-me-dog  
+                E----F 
+               /    /　\
+              /    /    \
+             /    /      \
+            /    /        \
+main A-----B----D----------G 
+            \  /
+             C  
+             feature/change-read-me-cat  
 ```
   
 ## master での変更
 禁止された master への変更を検証する前に、以前に説明した git hook の追加作業を実施しておく。  
-[master への push を禁止する共有 git hook の作成方法](./how_to_protected_from_pushing_origin_master.md)
+[main への push を禁止する共有 git hook の作成方法](./how_to_protected_from_pushing_origin_master.md)
 
 ```console
 sed -i 's/犬/猿/' ./README.md
@@ -87,7 +87,7 @@ cat ./README.md
 
 ## push の失敗
 NOTE:  
-> 2020年7月30日現在、GitHub Branch Protection の機能では、強制的なプッシュ「git push -f」は防げても、通常の「git push origin master」は防げませんでした  
+> 2020年7月30日現在、GitHub Branch Protection の機能では、強制的なプッシュ「git push -f」は防げても、通常の「git push origin main」は防げませんでした  
 [GitHub Branch Protection](https://docs.github.com/ja/github/administering-a-repository/configuring-protected-branches)  
 
 ```console
@@ -97,7 +97,7 @@ git push
 ```
 実行結果:
 ```
-master branch への push は禁止です. Do not push to master branch!!!
+main branch への push は禁止です. Do not push to master branch!!!
 pull request ベースの開発フローを厳守してください.
 error: failed to push some refs to 'git@github.com.fs5013-furi-sutao:fs5013-furi-sutao/git.test.dir.git'
 
@@ -105,22 +105,22 @@ error: failed to push some refs to 'git@github.com.fs5013-furi-sutao:fs5013-furi
 状況イメージ：
 ```
 local
-                                  feature/add-git-hook-pre-push
-   feature/change-read-me-dog      H
-                  E----F          / \
-                 /    /　\       /   \
-                /    /    \     /     \
-               /    /      \   /       \
-              /    /        \ /         \
-master A-----B----D----------G-----------I----J <--Stop pushing to master by git 'pre-push' hook! 
-              \  /
-               C  
-               feature/change-read-me-cat  
+                                feature/add-git-hook-pre-push
+ feature/change-read-me-dog      H
+                E----F          / \
+               /    /　\       /   \
+              /    /    \     /     \
+             /    /      \   /       \
+            /    /        \ /         \
+main A-----B----D----------G-----------I----J <--Stop pushing to master by git 'pre-push' hook! 
+            \  /
+             C  
+            feature/change-read-me-cat  
 ```
 
 ~~禁止されたローカルの master からリモートの master への push だったので、GitHub で行ったブランチの保護設定により、push が失敗したことを確認する。~~  
 
-禁止されたローカルの master からリモートの master への push だったので、git hook として設定した pre-push スクリプトにより、git push が中止されたことを確認する。
+禁止されたローカルの main からリモートの main への push だったので、git hook として設定した pre-push スクリプトにより、git push が中止されたことを確認する。
 
 ## git ログの確認
 ```console
@@ -130,8 +130,8 @@ git log --oneline
 履歴ログ
 ＝＝＝＝＝
 ```console
-6a34b60 (HEAD -> master) change the dog to the ape in README.md
-cc62efd (origin/master) Merge pull request #3 from fs5013-furi-sutao/feature/add-git-hook-pre-push
+6a34b60 (HEAD -> main) change the dog to the ape in README.md
+cc62efd (origin/main) Merge pull request #3 from fs5013-furi-sutao/feature/add-git-hook-pre-push
 6aa1fa2 (origin/feature/add-git-hook-pre-push, feature/add-git-hook-pre-push) add pre-push of git hook
 5720fb3 Merge pull request #2 from fs5013-furi-sutao/feature/change-read-me-dog
 20be75a (origin/feature/change-read-me-dog, feature/change-read-me-dog) Merge branch 'master' into feature/change-read-me-dog
@@ -155,7 +155,7 @@ git log --oneline
 履歴ログ
 ＝＝＝＝＝
 ```console
-cc62efd (HEAD -> master, origin/master) Merge pull request #3 from fs5013-furi-sutao/feature/add-git-hook-pre-push
+cc62efd (HEAD -> main, origin/main) Merge pull request #3 from fs5013-furi-sutao/feature/add-git-hook-pre-push
 6aa1fa2 (origin/feature/add-git-hook-pre-push, feature/add-git-hook-pre-push) add pre-push of git hook
 5720fb3 Merge pull request #2 from fs5013-furi-sutao/feature/change-read-me-dog
 20be75a (origin/feature/change-read-me-dog, feature/change-read-me-dog) Merge branch 'master' into feature/change-read-me-dog
@@ -176,7 +176,7 @@ cat ./README.md
 
 反対に、`--hard` オプションを指定した場合は、ファイル自体の変更も元に戻すこととなる。
 
-ここで master にはコミットできないので、ブランチを切り替えたいのだが、ファイルに変更が掛かった状態になっている。
+ここで main にはコミットできないので、ブランチを切り替えたいのだが、ファイルに変更が掛かった状態になっている。
 
 この変更を一時退避させることにする。
 
@@ -186,17 +186,17 @@ git stash save
 状況イメージ：
 ```
 local
-                                  feature/add-git-hook-pre-push
-   feature/change-read-me-dog      H
-                  E----F          / \
-                 /    /　\       /   \
-                /    /    \     /     \
-               /    /      \   /       \
-              /    /        \ /         \
-master A-----B----D----------G-----------I  
-              \  /
-               C  
-               feature/change-read-me-cat  
+                                feature/add-git-hook-pre-push
+   feature/change-read-me-dog    H
+                E----F          / \
+               /    /　\       /   \
+              /    /    \     /     \
+             /    /      \   /       \
+            /    /        \ /         \
+main A-----B----D----------G-----------I  
+            \  /
+              C  
+              feature/change-read-me-cat  
                
 stash@{0} ->J
 ```
@@ -218,19 +218,19 @@ git stash apply stash@{0}
 実行結果イメージ：
 ```
 local
-                                  feature/add-git-hook-pre-push
-   feature/change-read-me-dog      H
-                  E----F          / \
-                 /    /　\       /   \
-                /    /    \     /     \
-               /    /      \   /       \
-              /    /        \ /         \
-master A-----B----D----------G-----------I  
-              \  /                        \
-               C                           \
-               feature/change-read-me-cat   \
-                                             J
-stash@{0} ->                                feature/change-read-me-ape
+                                feature/add-git-hook-pre-push
+ feature/change-read-me-dog      H
+                E----F          / \
+               /    /　\       /   \
+              /    /    \     /     \
+             /    /      \   /       \
+            /    /        \ /         \
+main A-----B----D----------G-----------I  
+            \  /                        \
+             C                           \
+             feature/change-read-me-cat   \
+                                           J
+stash@{0} ->                              feature/change-read-me-ape
 ```
 
 このコマンドでスタックの一番上のスタッシュが新規ブランチ上に戻される。
@@ -258,7 +258,7 @@ git push
 これでリモートに push できたので、プルリクエスト、マージまで行う。
 
 ```console
-git checkout master
+git checkout main
 git pull
 git lg
 ```
