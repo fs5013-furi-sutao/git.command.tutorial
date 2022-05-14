@@ -45,29 +45,29 @@ git branch
 実行結果：
 ```
 * feature/change-read-me-dog
-  master
+  main
 ```
 
 状況イメージ：
 ```
 local
-               feature/change-read-me-dog  
-               B'  
-              /  
-master A-----B  
+             feature/change-read-me-dog  
+             B'  
+            /  
+main A-----B  
 ```
 
 新規ブランチ `feature/change-read-me-dog` を切って、そのブランチに移動したことが分かる。
 master ブランチに戻る。
 
 ```console
-git checkout master
+git checkout main
 git branch
 ```
 実行結果：
 ```
   feature/change-read-me-dog
-* master
+* main
 ```
 
 現在地が master ブランチに戻ったことが分かる。
@@ -81,19 +81,19 @@ git branch
 ```
 * feature/change-read-me-cat
   feature/change-read-me-dog
-  master
+  main
 ```
 
 状況イメージ：
 ```
 local
-               feature/change-read-me-dog  
-               B'  
-              /  
-master A-----B  
-              \  
-               B''  
-               feature/change-read-me-cat  
+             feature/change-read-me-dog  
+             B'  
+            /  
+main A-----B  
+            \  
+             B''  
+             feature/change-read-me-cat  
 ```
 
 さらに、新規ブランチ `feature/change-read-me-cat` を切って、そのブランチに移動したことが分かる。ここからは `feature/change-read-me-cat` ブランチ上で作業をする。 
@@ -113,10 +113,10 @@ git push -u origin feature/change-read-me-cat
 ```
 origin
   
-master A-----B  
-              \  
-               B''  
-               feature/change-read-me-cat  
+main A-----B  
+            \  
+             B''  
+             feature/change-read-me-cat  
 ```
   
 `feature/change-read-me-cat` ブランチをリモートに反映できたことを GitHub で確認する。
@@ -139,21 +139,21 @@ git push
 状況イメージ：
 ```
 local
-               feature/change-read-me-dog  
-               B'  
-              /  
-master A-----B  
-              \  
-               C  
-               feature/change-read-me-cat  
+             feature/change-read-me-dog  
+             B'  
+            /  
+main A-----B  
+            \  
+             C  
+             feature/change-read-me-cat  
 ```
 ```
 origin
   
-master A-----B  
-              \  
-               C  
-               feature/change-read-me-cat  
+main A-----B  
+            \  
+             C  
+             feature/change-read-me-cat  
 ```
 
 GitHub のリポジトリを見て、「Compare & pull request」のボタンが表示されていることを確認する。
@@ -180,10 +180,10 @@ Finish your review ボタンを押下し、Comment のラジオボタンが選�
 ```
 origin
   
-master A-----B----D
-              \  /
-               C  
-               feature/change-read-me-cat  
+main A-----B----D
+            \  /
+             C  
+             feature/change-read-me-cat  
 ```
   
 上部の Pull requests タブを押すと、`0 Open 1 Closed` となっていることを確認し、`1 Closed` をクリックする。
@@ -201,7 +201,7 @@ git branch
 ```
 * feature/change-read-me-cat
   feature/change-read-me-dog
-  master
+  main
 ```
 
 `feature/change-read-me-cat` ブランチにいることを確認する。
@@ -214,7 +214,7 @@ git branch
 ```
   feature/change-read-me-cat
   feature/change-read-me-dog
-* master
+* main
 ```
 
 ```console
@@ -236,13 +236,13 @@ cat ./README.md
 状況イメージ：
 ```
 local
-               feature/change-read-me-dog  
-               B'  
-              /  
-master A-----B----D
-              \  /
-               C  
-               feature/change-read-me-cat  
+             feature/change-read-me-dog  
+             B'  
+            /  
+main A-----B----D
+            \  /
+             C  
+             feature/change-read-me-cat  
 ```
 
 pull によって、リモートでマージされた内容がローカルリポジトリに反映され、README.md の内容が「猫」になっていることを確認する。
@@ -257,7 +257,7 @@ git branch
 ```
   feature/change-read-me-cat
 * feature/change-read-me-dog
-  master
+  main
 ```
 
 `feature/change-read-me-dog` ブランチに移動したことを確認する。
@@ -269,9 +269,9 @@ git branch -a
 ```
   feature/change-read-me-cat
 * feature/change-read-me-dog
-  master
+  main
   remotes/origin/feature/change-read-me-cat
-  remotes/origin/master
+  remotes/origin/main
 ```
 
 リモートにはまだ、`feature/change-read-me-dog` が反映されていないことを確認する。
@@ -284,22 +284,22 @@ git branch -a
 ```
   feature/change-read-me-cat
 * feature/change-read-me-dog
-  master
+  main
   remotes/origin/feature/change-read-me-cat
   remotes/origin/feature/change-read-me-dog
-  remotes/origin/master
+  remotes/origin/main
 ```
 
 状況イメージ：
 ```
 origin
-               feature/change-read-me-dog  
-               B'  
-              /  
-master A-----B----D
-              \  /
-               C  
-               feature/change-read-me-cat  
+             feature/change-read-me-dog  
+             B'  
+            /  
+main A-----B----D
+            \  /
+             C  
+             feature/change-read-me-cat  
 ```
 
 ## dog ブランチ上での変更
@@ -309,7 +309,7 @@ master A-----B----D
 cat ./README.md
 ```
 
-master が「猫」でマージされる前にブランチを切ったので、まだ内容が「人間」となっていることを確認する。
+main が「猫」でマージされる前にブランチを切ったので、まだ内容が「人間」となっていることを確認する。
 
 ```console
 sed -i 's/人間/犬/' ./README.md
@@ -327,16 +327,16 @@ git push
 状況イメージ：
 ```
 origin
-               feature/change-read-me-dog  
-                  E
-                 / 
-                /   
-               /     
-              /       
-master A-----B----D
-              \  /
-               C  
-               feature/change-read-me-cat  
+             feature/change-read-me-dog  
+                E
+               / 
+              /   
+             /     
+            /       
+main A-----B----D
+            \  /
+             C  
+             feature/change-read-me-cat  
 ```
   
 GitHub のリポジトリを見て、「Compare & pull request」のボタンが表示されていることを確認するここで「Compare & pull request」ボタンを押下。
@@ -344,16 +344,16 @@ GitHub のリポジトリを見て、「Compare & pull request」のボタンが
 状況イメージ：
 ```
 origin
-               feature/change-read-me-dog  
-                  E
-                 / \
-                /   \
-               /     \
-              /       \
-master A-----B----D--- Can’t automatically merge. 
-              \  /
-               C  
-               feature/change-read-me-cat  
+             feature/change-read-me-dog  
+                E
+               / \
+              /   \
+             /     \
+            /       \
+main A-----B----D--- Can’t automatically merge. 
+            \  /
+             C  
+             feature/change-read-me-cat  
 ```
 
 Can’t automatically merge. となっていて、自動マージができないことを確認する。
@@ -370,13 +370,13 @@ git branch
 ```
   feature/change-read-me-cat
 * feature/change-read-me-dog
-  master
+  main
 ```
 
 `feature/change-read-me-dog` ブランチにいることが分かる。
 
 ```console
-git merge master 
+git merge main 
 ```
 実行結果：
 ```
@@ -394,18 +394,18 @@ README.md を自動マージ
 ```
 local
                feature/change-read-me-dog  
-                  E----@ CONFLICT.Automatic merge failed.
-                 /    /
-                /    /
-               /    /  
-              /    /    
-master A-----B----D 
-              \  /
-               C  
-               feature/change-read-me-cat  
+                E----@ CONFLICT.Automatic merge failed.
+               /    /
+              /    /
+             /    /  
+            /    /    
+main A-----B----D 
+            \  /
+             C  
+             feature/change-read-me-cat  
 ```
 
-master ブランチの内容を `feature/change-read-me-dog` ブランチにマージした（取り込んだ）が、もちろん内容が競合（コンフリクト）した状態になる。
+main ブランチの内容を `feature/change-read-me-dog` ブランチにマージした（取り込んだ）が、もちろん内容が競合（コンフリクト）した状態になる。
 
 VSCode で README.md ファイルを見てみる。
 
@@ -416,7 +416,7 @@ VSCode で README.md ファイルを見てみる。
 私は犬です.  
 =======
 私は猫です.  
->>>>>>> master
+>>>>>>> main
 ```
 ＝＝＝＝＝
 
@@ -466,16 +466,16 @@ git push
 状況イメージ：
 ```
 origin:local
-               feature/change-read-me-dog  
-                  E----F 
-                 /    /
-                /    /
-               /    /  
-              /    /    
-master A-----B----D 
-              \  /
-               C  
-               feature/change-read-me-cat  
+             feature/change-read-me-dog  
+                E----F 
+               /    /
+              /    /
+             /    /  
+            /    /    
+main A-----B----D 
+            \  /
+             C  
+             feature/change-read-me-cat  
 ```
 
 これで GitHub を見て、コミットが Able to merge になったことを確認する。  
@@ -489,16 +489,16 @@ master A-----B----D
 状況イメージ：
 ```
 origin
-               feature/change-read-me-dog  
-                  E----F 
-                 /    /　\
-                /    /    \
-               /    /      \
-              /    /        \
-master A-----B----D----------G 
-              \  /
-               C  
-               feature/change-read-me-cat  
+             feature/change-read-me-dog  
+                E----F 
+               /    /　\
+              /    /    \
+             /    /      \
+            /    /        \
+main A-----B----D----------G 
+            \  /
+             C  
+             feature/change-read-me-cat  
 ```
   
 リポジトリのトップページを見て、README.md の内容が「犬」に変わっていることを確認する。  
