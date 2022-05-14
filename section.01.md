@@ -45,12 +45,6 @@ mkdir ./git.test.dir
 そこでコンソールのコマンド履歴の機能を使う。
 カーソルキーの「↑」ボタンを押すと、自身が実行したコマンドの履歴が [スタック](https://ja.wikipedia.org/wiki/スタック) 状に表示されるはず。
 
-直前の履歴の find コマンドを表示させて実行する。
-
-```console
-find -maxdepth 1 -type d -name '[a-g]*'
-```
-
 続いて今、作成した `git.test.dir` フォルダ内に移動したい。
 `cd ./git` までタイピングし、Tab キーを押すことで  `./git.test.dir` のパスが補完されることを確認する。
 
