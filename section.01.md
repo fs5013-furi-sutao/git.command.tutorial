@@ -89,8 +89,8 @@ git config --local user.email <メールアドレス>
 ```
 例）：
 ```console
-git config --local user.name fs5013-furi-sutao
-git config --local user.email fs5013.furi.sutao@gmail.com
+git config --local user.name yamada-taro
+git config --local user.email yamada-taro@taro.com
 ```
   
 git を使い慣れてきたら、git のログを見やすくする設定もしておく。
